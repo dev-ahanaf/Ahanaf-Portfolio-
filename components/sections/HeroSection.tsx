@@ -46,17 +46,17 @@ export const HeroSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="relative mt-4 sm:mt-8 mb-6 flex flex-col items-center justify-center"
         >
-          {/* Floating Speech Bubble */}
-          <div className="absolute -top-11 sm:-top-12 left-1/2 -translate-x-1/2 bg-[#1a0b2e] text-white border border-[#8b5cf6]/40 px-3.5 sm:px-4 py-1.5 rounded-2xl text-[11px] sm:text-sm font-semibold shadow-[0_0_20px_rgba(139,92,246,0.3)] whitespace-nowrap max-w-[90vw] flex items-center gap-1.5 z-30">
-            <span>Hello! I Am <strong className="text-[#8b5cf6] font-bold">{siteConfig.personal.name}</strong></span>
-            <span className="text-sm sm:text-base">👋</span>
-            {/* Bubble Tail Arrow */}
-            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#1a0b2e]" />
-          </div>
-
           {/* Profile Orbit Container */}
           <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] flex items-center justify-center">
             
+            {/* Floating Speech Bubble at Top Right (Diagonally Placed) */}
+            <div className="absolute -top-3 -right-2 sm:-top-5 sm:-right-12 bg-[#1a0b2e] text-white border border-[#8b5cf6]/40 px-3.5 sm:px-4 py-1.5 rounded-2xl text-[11px] sm:text-sm font-semibold shadow-[0_0_20px_rgba(139,92,246,0.35)] whitespace-nowrap z-30 flex items-center gap-1.5">
+              <span>Hello! I Am <strong className="text-[#8b5cf6] font-bold">{siteConfig.personal.name}</strong></span>
+              <span className="text-sm sm:text-base">👋</span>
+              {/* Bubble Tail Arrow pointing down-left towards photo */}
+              <div className="absolute -bottom-2 left-5 sm:left-6 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#1a0b2e] -rotate-12" />
+            </div>
+
             {/* Avatar Soft Purple Glow Background */}
             <div className="absolute inset-4 rounded-full bg-[#8b5cf6]/30 blur-[40px] pointer-events-none" />
 

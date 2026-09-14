@@ -49,12 +49,12 @@ export const HeroSection: React.FC = () => {
           {/* Profile Orbit Container */}
           <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] flex items-center justify-center">
             
-            {/* Floating Speech Bubble at Top Right (Diagonally Placed) */}
-            <div className="absolute -top-3 -right-2 sm:-top-5 sm:-right-12 bg-[#1a0b2e] text-white border border-[#8b5cf6]/40 px-3.5 sm:px-4 py-1.5 rounded-2xl text-[11px] sm:text-sm font-semibold shadow-[0_0_20px_rgba(139,92,246,0.35)] whitespace-nowrap z-30 flex items-center gap-1.5">
+            {/* Floating Speech Bubble at Right (Outside Orbit Path) */}
+            <div className="absolute top-4 -right-14 sm:top-6 sm:-right-24 bg-[#1a0b2e] text-white border border-[#8b5cf6]/40 px-3.5 sm:px-4 py-1.5 rounded-2xl text-[11px] sm:text-sm font-semibold shadow-[0_0_20px_rgba(139,92,246,0.35)] whitespace-nowrap z-30 flex items-center gap-1.5">
               <span>Hello! I Am <strong className="text-[#8b5cf6] font-bold">{siteConfig.personal.name}</strong></span>
               <span className="text-sm sm:text-base">👋</span>
-              {/* Bubble Tail Arrow pointing down-left towards photo */}
-              <div className="absolute -bottom-2 left-5 sm:left-6 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#1a0b2e] -rotate-12" />
+              {/* Bubble Tail Arrow pointing left towards orbit */}
+              <div className="absolute top-1/2 -left-2 -translate-y-1/2 w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-r-[8px] border-r-[#1a0b2e]" />
             </div>
 
             {/* Avatar Soft Purple Glow Background */}

@@ -49,24 +49,8 @@ export const HeroSection: React.FC = () => {
           {/* Profile Orbit Container */}
           <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] flex items-center justify-center">
             
-            {/* Floating Speech Bubble & Red Accent at Top-Right (Fully Outside Orbit Ring) */}
-            <div className="absolute -top-8 -right-8 sm:-top-14 sm:-right-16 z-30 pointer-events-auto">
-              {/* Red Scribble Accent in Top-Right Corner */}
-              <svg
-                className="absolute -top-4 -right-3 sm:-top-5 sm:-right-4 w-12 h-6 sm:w-14 sm:h-7 text-rose-500 pointer-events-none opacity-90 z-40 overflow-visible"
-                viewBox="0 0 60 30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5,18 C15,8 40,5 55,12 C45,18 20,22 10,25 C25,24 45,20 52,16"
-                  stroke="currentColor"
-                  strokeWidth="2.8"
-                  strokeLinecap="round"
-                />
-              </svg>
-
-              {/* Rounded Speech Bubble Badge */}
+            {/* Floating Speech Bubble at Top-Right (Shifted Up & Right, Fully Outside Orbit Ring) */}
+            <div className="absolute -top-12 -right-12 sm:-top-20 sm:-right-24 z-30 pointer-events-auto">
               <div className="relative bg-[#1a0b2e] text-white border border-[#8b5cf6]/40 px-3.5 sm:px-4 py-1.5 rounded-2xl text-[11px] sm:text-sm font-semibold shadow-[0_0_20px_rgba(139,92,246,0.35)] whitespace-nowrap flex items-center gap-1.5">
                 <span>Hello! I Am <strong className="text-[#8b5cf6] font-bold">{siteConfig.personal.name}</strong></span>
                 <span className="text-sm sm:text-base">👋</span>

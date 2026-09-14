@@ -25,8 +25,8 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       className={`mb-12 ${centered ? "text-center" : "text-left"}`}
     >
       {badge && (
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-wider uppercase bg-purple-950/60 text-purple-300 border border-purple-500/30 mb-4 shadow-[0_0_15px_rgba(168,85,247,0.15)]">
-          <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-ping" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-wider uppercase bg-[#0F131C] text-[#10B981] border border-[#10B981]/30 mb-4 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-ping" />
           {badge}
         </div>
       )}

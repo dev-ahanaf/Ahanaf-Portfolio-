@@ -10,18 +10,18 @@ export const SkillsSection: React.FC = () => {
   const getCategoryIcon = (iconName: string) => {
     switch (iconName) {
       case "code":
-        return <Code2 className="w-6 h-6 text-cyan-400" />;
+        return <Code2 className="w-6 h-6 text-[#10B981]" />;
       case "cpu":
         return <Cpu className="w-6 h-6 text-emerald-400" />;
       case "camera":
-        return <Camera className="w-6 h-6 text-purple-400" />;
+        return <Camera className="w-6 h-6 text-cyan-400" />;
       default:
-        return <Code2 className="w-6 h-6 text-cyan-400" />;
+        return <Code2 className="w-6 h-6 text-[#10B981]" />;
     }
   };
 
   return (
-    <section id="skills" className="py-14 sm:py-20 lg:py-24 bg-slate-950 text-white relative">
+    <section id="skills" className="py-14 sm:py-20 lg:py-24 bg-[#08090C] text-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Technical & Creative Expertise"
@@ -37,12 +37,12 @@ export const SkillsSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
-              className="rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-cyan-500/30 p-5 sm:p-8 backdrop-blur-xl transition-all shadow-xl flex flex-col justify-between"
+              className="rounded-2xl bg-[#0F131C] border border-slate-800/80 hover:border-[#10B981]/40 p-5 sm:p-8 transition-all shadow-xl flex flex-col justify-between"
             >
               <div>
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="p-3 rounded-xl bg-slate-800/80 border border-slate-700">
+                  <div className="p-3 rounded-xl bg-[#161B26] border border-slate-700/60">
                     {getCategoryIcon(cat.iconName)}
                   </div>
                   <div>
@@ -56,9 +56,9 @@ export const SkillsSection: React.FC = () => {
                   {cat.skills.map((skill, sIdx) => (
                     <li
                       key={sIdx}
-                      className="flex items-center gap-2.5 text-sm text-slate-300 bg-slate-950/40 px-3 py-2 rounded-xl border border-slate-800/60"
+                      className="flex items-center gap-2.5 text-sm text-slate-300 bg-[#08090C]/60 px-3 py-2 rounded-xl border border-slate-800/60 font-sans"
                     >
-                      <CheckCircle className="w-4 h-4 text-cyan-400 shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-[#10B981] shrink-0" />
                       <span>{skill}</span>
                     </li>
                   ))}

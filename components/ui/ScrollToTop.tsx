@@ -16,7 +16,6 @@ export const ScrollToTop: React.FC = () => {
       }
     };
 
-    // Check immediately on mount
     toggleVisibility();
 
     window.addEventListener("scroll", toggleVisibility, { passive: true });
@@ -40,12 +39,11 @@ export const ScrollToTop: React.FC = () => {
           transition={{ duration: 0.2 }}
           onClick={scrollToTop}
           aria-label="Scroll to top"
-          className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-[99] group p-3 sm:p-3.5 rounded-full bg-[#180c24]/95 border border-[#8b5cf6]/60 text-white shadow-[0_0_25px_rgba(139,92,246,0.5)] backdrop-blur-xl hover:bg-[#8b5cf6] hover:border-[#8b5cf6] hover:shadow-[0_0_35px_rgba(139,92,246,0.7)] hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center"
+          className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-[99] group p-3 sm:p-3.5 rounded-full bg-[#0F131C]/95 border border-[#10B981]/60 text-white shadow-[0_0_20px_rgba(16,185,129,0.3)] backdrop-blur-xl hover:bg-[#10B981] hover:border-[#10B981] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center"
         >
-          <ArrowUp className="w-5 h-5 text-[#8b5cf6] group-hover:text-white transition-colors" />
+          <ArrowUp className="w-5 h-5 text-[#10B981] group-hover:text-slate-950 transition-colors" />
         </motion.button>
       )}
     </AnimatePresence>
   );
 };
-

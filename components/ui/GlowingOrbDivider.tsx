@@ -8,9 +8,9 @@ import { siteConfig } from "@/data/siteConfig";
 
 export const GlowingOrbDivider: React.FC = () => {
   return (
-    <section className="py-20 bg-[#0e0812] text-white relative overflow-hidden select-none border-y border-[#8b5cf6]/15">
-      {/* Background Deep Violet Radial Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#2a1245]/60 rounded-full blur-[80px] pointer-events-none transform-gpu" />
+    <section className="py-20 bg-[#08090C] text-white relative overflow-hidden select-none border-y border-[#10B981]/20">
+      {/* Background Deep Emerald Radial Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#10B981]/10 rounded-full blur-[80px] pointer-events-none transform-gpu" />
 
       <div className="max-w-5xl mx-auto px-4 text-center relative z-10 space-y-12">
         
@@ -36,9 +36,9 @@ export const GlowingOrbDivider: React.FC = () => {
           {siteConfig.tools.map((tool, idx) => (
             <div
               key={idx}
-              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#180c24] border border-[#8b5cf6]/25 text-xs font-mono text-slate-300 hover:border-[#8b5cf6] hover:text-[#8b5cf6] transition-all shadow-[0_0_15px_rgba(139,92,246,0.1)]"
+              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0F131C] border border-[#10B981]/25 text-xs font-mono text-slate-300 hover:border-[#10B981] hover:text-[#10B981] transition-all shadow-[0_0_15px_rgba(16,185,129,0.08)]"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#8b5cf6]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
               <span>{tool.name}</span>
             </div>
           ))}
@@ -53,28 +53,28 @@ export const GlowingOrbDivider: React.FC = () => {
           className="relative py-12 flex items-center justify-center"
         >
           {/* Orbit Ring 3 (Outer - Counter Spin) */}
-          <div className="relative w-72 h-72 sm:w-80 sm:h-80 rounded-full border border-[#8b5cf6]/20 animate-slow-spin border-dashed flex items-center justify-center">
+          <div className="relative w-72 h-72 sm:w-80 sm:h-80 rounded-full border border-[#10B981]/20 animate-slow-spin border-dashed flex items-center justify-center">
             
             {/* Floating Orbit Icon 1: Code */}
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 p-2 rounded-full bg-[#180c24] border border-[#8b5cf6]/40 text-[#8b5cf6] shadow-[0_0_15px_rgba(139,92,246,0.3)]">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 p-2 rounded-full bg-[#0F131C] border border-[#10B981]/40 text-[#10B981] shadow-[0_0_15px_rgba(16,185,129,0.2)]">
               <Code className="w-4 h-4" />
             </div>
 
             {/* Floating Orbit Icon 2: Settings Gear */}
-            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 p-2 rounded-full bg-[#180c24] border border-[#8b5cf6]/40 text-[#8b5cf6] shadow-[0_0_15px_rgba(139,92,246,0.3)]">
+            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 p-2 rounded-full bg-[#0F131C] border border-[#10B981]/40 text-[#10B981] shadow-[0_0_15px_rgba(16,185,129,0.2)]">
               <Settings className="w-4 h-4" />
             </div>
 
             {/* Orbit Ring 2 (Middle) */}
-            <div className="w-56 h-56 sm:w-64 sm:h-64 rounded-full border border-[#8b5cf6]/35 flex items-center justify-center relative">
+            <div className="w-56 h-56 sm:w-64 sm:h-64 rounded-full border border-[#10B981]/35 flex items-center justify-center relative">
               
               {/* Floating Orbit Icon 3: FileText */}
-              <div className="absolute -left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-[#180c24] border border-[#8b5cf6]/40 text-[#8b5cf6] shadow-[0_0_15px_rgba(139,92,246,0.3)]">
+              <div className="absolute -left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-[#0F131C] border border-[#10B981]/40 text-[#10B981] shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                 <FileText className="w-4 h-4" />
               </div>
 
               {/* Floating Orbit Icon 4: Figma/Design */}
-              <div className="absolute -right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-[#180c24] border border-[#8b5cf6]/40 text-[#8b5cf6] shadow-[0_0_15px_rgba(139,92,246,0.3)]">
+              <div className="absolute -right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-[#0F131C] border border-[#10B981]/40 text-[#10B981] shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                 <Figma className="w-4 h-4" />
               </div>
 
@@ -85,7 +85,7 @@ export const GlowingOrbDivider: React.FC = () => {
                   alt={siteConfig.personal.name}
                   width={160}
                   height={160}
-                  className="w-full h-full object-contain rounded-lg shadow-[0_0_30px_rgba(139,92,246,0.3)]"
+                  className="w-full h-full object-contain rounded-lg shadow-[0_0_30px_rgba(16,185,129,0.2)]"
                 />
               </div>
 

@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0e0812;
+  --foreground: #c9c3d1;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  max-width: 100vw;
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Custom Purple Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0e0812;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a1245;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8b5cf6;
+}
+
+/* Glass Card styling */
+.clay-card {
+  background: linear-gradient(135deg, rgba(26, 12, 40, 0.7) 0%, rgba(18, 8, 29, 0.8) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.clay-card:hover {
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 35px -5px rgba(139, 92, 246, 0.25);
+}

@@ -165,32 +165,53 @@ export const siteConfig = {
   education: [
     {
       institution: "Daffodil International University",
-      degree: "BSc in Computing & Information Systems",
-      result: "Currently Studying",
+      degree: "B.Sc. in Computing and Information Systems (CIS)",
+      result: "3rd Year, 7th Semester | CGPA: 3.40 / 4.00",
       period: "Present",
       details:
         "Focusing on Software Engineering, Autonomous Robotics, Database Systems, Web Technologies, and Computer Architecture.",
     },
     {
-      institution: "Lions School & College, Saidpur",
+      institution: "Lions School and College, Saidpur",
       degree: "Higher Secondary Certificate (HSC) - Science",
-      result: "GPA 4.33",
-      period: "Completed",
+      result: "GPA 4.33 / 5.00",
+      period: "2023",
       details: "Focused on Mathematics, Physics, Chemistry, and Information Technology.",
     },
     {
       institution: "Barapukuria Coal Mine School",
       degree: "Secondary School Certificate (SSC) - Science",
-      result: "GPA 5.00",
-      period: "Completed",
+      result: "GPA 5.00 / 5.00",
+      period: "2021",
       details: "Focused on core sciences and mathematics.",
     },
   ] as EducationItem[],
 
+  certifications: [
+    {
+      title: "Web Development — Batch 13",
+      organization: "Programming Hero",
+      period: "Completed",
+      details: "Completed a comprehensive frontend web development course, building practical skills in modern web development.",
+    },
+    {
+      title: "Shopify Advanced Store Design",
+      organization: "OSTAD",
+      period: "Oct 2023 – Feb 2024",
+      details: "Completed advanced training in Shopify store design and custom Liquid theme development.",
+    },
+    {
+      title: "Advanced Digital Marketing & Shopify Dropshipping",
+      organization: "Webcoder-IT Limited — Uttara, Dhaka",
+      period: "Dec 2021 – Mar 2022",
+      details: "Completed a 6-month advanced program covering digital marketing strategy and Shopify dropshipping / e-commerce solutions.",
+    },
+  ],
+
   leadership: [
     {
       title: "Air Rover Scout Leader & Public Service Representative",
-      organization: "Daffodil International University Air Rover Scout Group",
+      organization: "Daffodil International University Air Rover Scout Group (DIUARSG)",
       description:
         "Active Rover Scout leader at DIU Air Rover Scout Group. Completed advanced unit leader training courses and represented DIU at national scouting events, youth forums, and community service drives.",
       courses: [
@@ -281,6 +302,17 @@ export const siteConfig = {
     },
   ] as LeadershipItem[],
 
+  extracurricular: [
+    { role: "Photographer & Executive Member", org: "DIU Voluntary Service Club (DIU VSC)", period: "2025 – 2026" },
+    { role: "Media & Communication Secretary", org: "DIU AIRIS", period: "Active" },
+    { role: "Rover Scout Unit Leader", org: "Daffodil International University Air Rover Scout Group (DIUARSG)", period: "Active" },
+    { role: "Rangpur Zone Leader", org: "Roar For Street Child (RSC)", period: "2022 – 2024" },
+    { role: "Deputy Divisional Coordinator (Rangpur)", org: "National Newspaper Olympiad (NNO)", period: "2024 – 2025" },
+    { role: "Executive Member", org: "CIS Club", period: "Active" },
+    { role: "Group Leader", org: "Bangladesh Red Crescent Society (BDRCS)", period: "2020 – 2021" },
+    { role: "Participant", org: "Building Bridges Through Leadership Training – Junior (BBLTJ)", period: "2020" },
+  ],
+
   experience: [
     {
       id: "lead-robotics-dev",
@@ -298,30 +330,30 @@ export const siteConfig = {
       iconType: "star",
     },
     {
-      id: "shopify-expert",
-      role: "Shopify Expert & Frontend Developer",
-      companyOrOrg: "Freelance / Web Agency Projects",
-      period: "3+ Years (2021 – Present)",
-      oneLiner: "Customized Liquid themes, optimized store speed, and built tailored e-commerce solutions.",
+      id: "shopify-store-designer",
+      role: "Shopify Store Designer",
+      companyOrOrg: "Pep Band — USA (Remote)",
+      period: "Mar 2023 – Apr 2024",
+      oneLiner: "Built visually appealing, user-friendly Shopify stores that drive sales and strengthen brand presence.",
       description: [
-        "Customized Liquid themes, optimized store speed, and integrated customized cart/checkout features.",
-        "Built responsive e-commerce storefronts tailored to client specifications across diverse industries.",
-        "Delivered fast UI layouts using HTML, CSS, JavaScript, and custom Shopify apps.",
+        "Built visually appealing, user-friendly Shopify stores that drive sales and strengthen brand presence.",
+        "Developed custom Shopify themes tailored to client specifications for a unique, engaging shopping experience.",
+        "Optimized stores for speed, SEO, and mobile responsiveness to maximize customer retention and conversion rates.",
       ],
-      skills: ["Shopify Liquid", "JavaScript", "HTML5/CSS3", "Theme Customization", "E-commerce"],
+      skills: ["Shopify Liquid", "Theme Customization", "E-Commerce", "CSS3", "Conversion Rate Optimization"],
       iconType: "planet",
     },
     {
-      id: "wordpress-developer",
-      role: "WordPress & Frontend Developer",
-      companyOrOrg: "Independent Client Solutions",
-      period: "2021 – Present",
-      oneLiner: "Developed custom responsive WordPress sites with WooCommerce and PHP optimization.",
+      id: "digital-marketer-nation-it",
+      role: "Digital Marketer",
+      companyOrOrg: "Nation IT Limited — Dhaka",
+      period: "Mar 2022 – Apr 2023",
+      oneLiner: "Executed data-driven digital marketing campaigns boosting engagement and lead generation.",
       description: [
-        "Developed custom responsive WordPress websites using Elementor, WooCommerce, and PHP customization.",
-        "Ensured cross-browser compatibility, mobile responsiveness, fast page loading, and SEO optimization.",
+        "Achieved a 50% increase in social media engagement and a 35% boost in lead generation by implementing data-driven digital marketing campaigns.",
+        "Managed performance marketing, audience targeting, and content strategy for regional campaigns.",
       ],
-      skills: ["WordPress", "WooCommerce", "Elementor", "PHP", "SEO"],
+      skills: ["Digital Marketing", "Social Media Strategy", "Lead Generation", "SEO", "Analytics"],
       iconType: "ghost",
     },
     {
@@ -340,21 +372,17 @@ export const siteConfig = {
   ] as ExperienceItem[],
 
   tools: [
-    { name: "Arduino", category: "Hardware" },
-    { name: "ESP32", category: "IoT" },
-    { name: "PID Control", category: "Robotics" },
-    { name: "React", category: "Frontend" },
-    { name: "Next.js 14", category: "Framework" },
-    { name: "TypeScript", category: "Language" },
-    { name: "Tailwind CSS", category: "CSS" },
-    { name: "Python", category: "Backend" },
-    { name: "C++", category: "Embedded" },
-    { name: "Supabase", category: "Database" },
-    { name: "Git & GitHub", category: "Version Control" },
-    { name: "Shopify Liquid", category: "E-Commerce" },
-    { name: "WordPress", category: "CMS" },
-    { name: "Lightroom", category: "Creative" },
-    { name: "Premiere Pro", category: "Video" },
+    { name: "Frontend Web Development", category: "Software" },
+    { name: "Shopify Store Design & Liquid", category: "E-Commerce" },
+    { name: "WordPress & PHP", category: "CMS" },
+    { name: "IoT & Robotics (Drones, LFR)", category: "Hardware" },
+    { name: "Arduino & ESP32", category: "Hardware" },
+    { name: "React & Next.js 14", category: "Frontend" },
+    { name: "TypeScript & ES6+", category: "Language" },
+    { name: "SEO & Digital Marketing", category: "Marketing" },
+    { name: "SolidWorks", category: "Design" },
+    { name: "Canva Pro & CapCut Pro", category: "Creative" },
+    { name: "MS Office (Word, PowerPoint, Excel)", category: "Productivity" },
   ],
 
   achievements: [
@@ -378,10 +406,23 @@ export const siteConfig = {
       organization: "Noakhali Science and Technology University (NSTU)",
       year: "2026",
       category: "Robotics",
-      description: "Secured 1st Place Champion in the autonomous Line Follower Robot (LFR) competition at NSTU EEE Day 2K26.",
+      description: "Secured 1st Place Champion in the autonomous Line Follower Robot (LFR) competition at NSTU EEE Day 2K26 (Team Leader).",
       icon: "trophy",
       imageUrl: "/images/nstu-eee-day-champion.jpg",
       badgeText: "🏆 1st Place Champion",
+      highlight: true,
+    },
+    {
+      id: "successful-freelancer-award",
+      title: "Successful Freelancer Award 2023",
+      event: "Webcoder-IT Award Ceremony",
+      organization: "Webcoder-IT Limited",
+      year: "2023",
+      category: "Freelancing & E-Commerce",
+      description: "Awarded Successful Freelancer Award 2023 for outstanding performance in e-commerce storefront development and client project delivery.",
+      icon: "trophy",
+      imageUrl: "/images/circuitmind-ai.png",
+      badgeText: "🏆 Award Winner",
       highlight: true,
     },
     {
@@ -399,3 +440,4 @@ export const siteConfig = {
     },
   ] as AchievementItem[],
 };
+

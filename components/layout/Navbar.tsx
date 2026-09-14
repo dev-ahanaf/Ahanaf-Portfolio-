@@ -22,6 +22,7 @@ export const Navbar: React.FC = () => {
     { label: "About", href: "#about" },
     { label: "Lab / Work", href: "#experience" },
     { label: "Projects", href: "#projects" },
+    { label: "Resume", href: "#resume" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -49,7 +50,7 @@ export const Navbar: React.FC = () => {
           />
         </Link>
 
-        {/* Right Desktop Nav Links (Home, About, Lab, Contact) */}
+        {/* Right Desktop Nav Links */}
         <nav className="hidden md:flex items-center gap-1 rounded-full bg-[#0F131C]/70 border border-[#10B981]/25 px-4 py-1.5 backdrop-blur-md shadow-[0_0_15px_rgba(16,185,129,0.08)]">
           {navItems.map((item) => (
             <Link
@@ -64,16 +65,15 @@ export const Navbar: React.FC = () => {
 
         {/* Action Button */}
         <div className="flex items-center gap-2 sm:gap-3">
-          <a
-            href={siteConfig.personal.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-[#10B981] hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-all shadow-[0_0_20px_rgba(16,185,129,0.25)]"
+          <Link
+            href="#resume"
+            className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-[#10B981] hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-all shadow-[0_0_20px_rgba(16,185,129,0.25)] active:scale-95"
           >
-            <FileText className="w-3.5 h-3.5" /> Resume
-          </a>
+            <FileText className="w-3.5 h-3.5 text-slate-950" /> Resume
+          </Link>
         </div>
       </div>
     </header>
   );
 };
+

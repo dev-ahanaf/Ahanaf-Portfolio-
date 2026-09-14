@@ -4,7 +4,16 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, Trophy, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  Mail,
+  Trophy,
+  Sparkles,
+  FolderGit2,
+  Network,
+  Settings,
+  MessageSquare,
+} from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 import { Typewriter } from "@/components/ui/Typewriter";
 
@@ -30,46 +39,97 @@ export const HeroSection: React.FC = () => {
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 text-center flex flex-col items-center">
         
-        {/* Top Centered Circular Avatar & Speech Bubble */}
+        {/* Dark Purple UI Card with Orbiting Icons & Speech Bubble */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="relative mt-6 sm:mt-10 mb-6"
+          className="relative w-full max-w-md bg-gradient-to-b from-[#180c2e] via-[#120820] to-[#0e0812] border border-[#8b5cf6]/35 rounded-3xl p-6 sm:p-10 mb-8 shadow-[0_0_60px_rgba(139,92,246,0.25)] flex flex-col items-center justify-center overflow-visible"
         >
-          {/* Speech Bubble */}
-          <div className="absolute -top-11 sm:-top-12 left-1/2 -translate-x-1/2 bg-[#1a0b2e] text-white border border-[#8b5cf6]/40 px-3 sm:px-4 py-1.5 rounded-2xl text-[11px] sm:text-sm font-semibold shadow-[0_0_20px_rgba(139,92,246,0.3)] whitespace-nowrap max-w-[90vw] flex items-center gap-1.5 z-20">
-            <span>Hello! I Am <strong className="text-[#8b5cf6] font-bold">{siteConfig.personal.name}</strong></span>
-            <span className="text-sm sm:text-base">👋</span>
-            {/* Bubble Tail Arrow */}
-            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#1a0b2e]" />
-          </div>
-
-          {/* Avatar Soft Purple Glow Background */}
-          <div className="absolute -inset-3 sm:-inset-4 rounded-full bg-gradient-to-tr from-[#8b5cf6] to-[#4a1f7a] opacity-60 blur-xl animate-pulse-glow" />
-
-          {/* Real Portrait Frame */}
-          <div className="relative w-32 h-32 sm:w-44 sm:h-44 rounded-full overflow-hidden border-2 sm:border-3 border-[#8b5cf6]/70 shadow-[0_0_40px_rgba(139,92,246,0.45)] bg-[#1e0a35] flex items-center justify-center">
-            <Image
-              src={siteConfig.personal.avatarImageUrl}
-              alt="Fayek Ahanaf - DIU CIS Student"
-              fill
-              priority
-              sizes="(max-width: 640px) 128px, 176px"
-              className="object-cover object-top"
+          {/* Top-Right Red Scribble Line Accent */}
+          <svg
+            className="absolute top-4 right-4 w-10 h-10 text-rose-500 pointer-events-none overflow-visible"
+            viewBox="0 0 50 50"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8,15 C20,5 35,25 42,10 C45,28 18,35 38,42"
+              stroke="#ef4444"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              className="opacity-80"
             />
-          </div>
-        </motion.div>
+          </svg>
 
-        {/* Small Eyebrow Line */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="inline-flex items-center gap-2 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full bg-[#1e0a35]/80 border border-[#8b5cf6]/30 text-[#8b5cf6] text-[11px] sm:text-xs font-mono mb-3 shadow-[0_0_15px_rgba(139,92,246,0.15)]"
-        >
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>{siteConfig.personal.eyebrow}</span>
+          {/* Diagonally Placed Speech-Bubble Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: -10, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="absolute -top-5 right-2 sm:-top-6 sm:right-4 z-30 bg-[#1a0b2e] text-white border border-[#8b5cf6]/50 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-2xl text-xs sm:text-sm font-semibold shadow-[0_0_25px_rgba(139,92,246,0.4)] whitespace-nowrap flex items-center gap-1.5"
+          >
+            <span>
+              Hello! I Am <strong className="text-[#8b5cf6] font-bold">{siteConfig.personal.name}</strong>
+            </span>
+            <span className="text-sm sm:text-base">👋</span>
+            {/* Bubble Tail Arrow pointing down-left towards picture */}
+            <div className="absolute -bottom-2 left-6 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#1a0b2e]" />
+          </motion.div>
+
+          {/* Orbit Container with Circular Profile Picture */}
+          <div className="relative my-4 flex items-center justify-center">
+            
+            {/* Soft Glow Radial behind Picture */}
+            <div className="absolute -inset-4 rounded-full bg-gradient-to-tr from-[#8b5cf6] to-[#4a1f7a] opacity-60 blur-xl animate-pulse-glow" />
+
+            {/* Dashed Circular Orbit Path surrounding the Picture */}
+            <div className="absolute w-52 h-52 sm:w-64 sm:h-64 rounded-full border border-dashed border-[#8b5cf6]/40 pointer-events-none animate-spin-slow" />
+
+            {/* 4 Orbiting Glowing Icon Bubbles sitting along the Dashed Path */}
+            {/* Top Icon Bubble (Folder) */}
+            <div className="absolute -top-4 sm:-top-5 left-1/2 -translate-x-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#180c28] border border-[#8b5cf6]/60 text-purple-300 flex items-center justify-center shadow-[0_0_15px_rgba(139,92,246,0.5)] z-20 hover:scale-110 transition-transform">
+              <FolderGit2 className="w-4 h-4 sm:w-5 sm:h-5 text-purple-300" />
+            </div>
+
+            {/* Right Icon Bubble (Network / Puzzle) */}
+            <div className="absolute top-1/2 -right-4 sm:-right-5 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#180c28] border border-[#8b5cf6]/60 text-purple-300 flex items-center justify-center shadow-[0_0_15px_rgba(139,92,246,0.5)] z-20 hover:scale-110 transition-transform">
+              <Network className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-300" />
+            </div>
+
+            {/* Bottom Icon Bubble (Gear) */}
+            <div className="absolute -bottom-4 sm:-bottom-5 left-1/2 -translate-x-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#180c28] border border-[#8b5cf6]/60 text-purple-300 flex items-center justify-center shadow-[0_0_15px_rgba(139,92,246,0.5)] z-20 hover:scale-110 transition-transform">
+              <Settings className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-300 animate-spin-slow" />
+            </div>
+
+            {/* Left Icon Bubble (Chat) */}
+            <div className="absolute top-1/2 -left-4 sm:-left-5 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#180c28] border border-[#8b5cf6]/60 text-purple-300 flex items-center justify-center shadow-[0_0_15px_rgba(139,92,246,0.5)] z-20 hover:scale-110 transition-transform">
+              <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-amber-300" />
+            </div>
+
+            {/* Center Circular Profile Picture Frame */}
+            <div className="relative w-36 h-36 sm:w-48 sm:h-48 rounded-full overflow-hidden border-2 sm:border-3 border-[#8b5cf6] shadow-[0_0_50px_rgba(139,92,246,0.5)] bg-[#1e0a35] z-10 flex items-center justify-center">
+              <Image
+                src={siteConfig.personal.avatarImageUrl}
+                alt="Fayek Ahanaf - DIU CIS Student"
+                fill
+                priority
+                sizes="(max-width: 640px) 144px, 192px"
+                className="object-cover object-top"
+              />
+            </div>
+          </div>
+
+          {/* Small Pill Badge below the picture */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1e0a35]/90 border border-[#8b5cf6]/40 text-[#8b5cf6] text-xs font-mono mt-4 z-10 shadow-[0_0_15px_rgba(139,92,246,0.2)]"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-[#8b5cf6]" />
+            <span>{siteConfig.personal.eyebrow}</span>
+          </motion.div>
         </motion.div>
 
         {/* Large Two-line Headline with Hand-drawn Ellipse */}

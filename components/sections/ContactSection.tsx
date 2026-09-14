@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Mail,
   Send,
@@ -11,7 +11,10 @@ import {
   CheckCircle2,
   AlertCircle,
   Loader2,
-  Sparkles,
+  Phone,
+  Copy,
+  Check,
+  Globe,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { siteConfig } from "@/data/siteConfig";
@@ -28,6 +31,16 @@ export const ContactSection: React.FC = () => {
     type: "success" | "error" | null;
     message: string;
   }>({ type: null, message: "" });
+
+  const [copiedField, setCopiedField] = useState<string | null>(null);
+
+  const copyToClipboard = (text: string, label: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedField(label);
+    setTimeout(() => {
+      setCopiedField(null);
+    }, 2500);
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -60,44 +73,94 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-14 sm:py-20 lg:py-24 bg-[#0e0812] text-white relative">
-      {/* Background Deep Violet Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[650px] h-[320px] sm:h-[500px] bg-[#2a1245]/50 rounded-full blur-[100px] sm:blur-[160px] pointer-events-none" />
+    <section id="contact" className="py-14 sm:py-20 lg:py-24 bg-[#08090C] text-white relative overflow-hidden">
+      {/* Ambient Emerald Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[650px] h-[320px] sm:h-[500px] bg-[#10B981]/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         
+        {/* Toast Alert Banner */}
+        <AnimatePresence>
+          {copiedField && (
+            <motion.div
+              initial={{ opacity: 0, y: -20, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -20, scale: 0.9 }}
+              className="fixed top-20 left-1/2 -translate-x-1/2 z-50 px-5 py-2.5 rounded-full bg-[#10B981] text-slate-950 font-bold text-xs sm:text-sm shadow-[0_0_25px_rgba(16,185,129,0.5)] flex items-center gap-2"
+            >
+              <Check className="w-4 h-4 text-slate-950" />
+              <span>Copied {copiedField} to clipboard!</span>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* Section Heading */}
         <SectionHeading
           badge="Get in Touch"
           title="Contact"
-          subtitle="Let's build delightful and accessible digital products together."
+          subtitle="Let's build delightful, high-performance software and autonomous systems together."
         />
 
         {/* Availability Statement */}
-        <p className="text-[#c9c3d1] text-xs sm:text-base lg:text-lg mb-4 max-w-2xl mx-auto leading-relaxed px-2">
+        <p className="text-slate-300 text-xs sm:text-base lg:text-lg mb-6 max-w-2xl mx-auto leading-relaxed px-2">
           {siteConfig.personal.availabilityStatement}
         </p>
 
-        {/* Email Mailto Link */}
-        <div className="mb-6 sm:mb-8 px-2">
-          <a
-            href={`mailto:${siteConfig.personal.email}`}
-            className="inline-flex items-center gap-2 text-base sm:text-2xl md:text-3xl font-mono font-bold text-[#8b5cf6] hover:text-white transition-all underline decoration-[#8b5cf6]/50 hover:decoration-[#8b5cf6] shadow-[0_0_25px_rgba(139,92,246,0.25)] break-all"
+        {/* Direct Quick Contact Cards (Email & Phone) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 max-w-xl mx-auto px-2">
+          {/* Email Card */}
+          <div
+            onClick={() => copyToClipboard(siteConfig.personal.email, "Email")}
+            className="group relative p-4 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-[#10B981]/50 cursor-pointer transition-all hover:bg-slate-900 flex items-center justify-between shadow-lg active:scale-95"
           >
-            <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-[#8b5cf6] shrink-0" /> {siteConfig.personal.email}
-          </a>
+            <div className="flex items-center gap-3 text-left">
+              <div className="p-2.5 rounded-xl bg-[#10B981]/10 border border-[#10B981]/30 text-[#10B981] shrink-0">
+                <Mail className="w-5 h-5" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold">Email Address</p>
+                <p className="text-xs sm:text-sm font-mono font-bold text-white group-hover:text-[#10B981] transition-colors truncate">
+                  {siteConfig.personal.email}
+                </p>
+              </div>
+            </div>
+            <div className="p-2 rounded-lg text-slate-400 group-hover:text-[#10B981] transition-colors shrink-0">
+              {copiedField === "Email" ? <Check className="w-4 h-4 text-[#10B981]" /> : <Copy className="w-4 h-4" />}
+            </div>
+          </div>
+
+          {/* Phone Card */}
+          <div
+            onClick={() => copyToClipboard(siteConfig.personal.phone, "Phone number")}
+            className="group relative p-4 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-[#10B981]/50 cursor-pointer transition-all hover:bg-slate-900 flex items-center justify-between shadow-lg active:scale-95"
+          >
+            <div className="flex items-center gap-3 text-left">
+              <div className="p-2.5 rounded-xl bg-[#10B981]/10 border border-[#10B981]/30 text-[#10B981] shrink-0">
+                <Phone className="w-5 h-5" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold">Phone Direct</p>
+                <p className="text-xs sm:text-sm font-mono font-bold text-white group-hover:text-[#10B981] transition-colors truncate">
+                  {siteConfig.personal.phone}
+                </p>
+              </div>
+            </div>
+            <div className="p-2 rounded-lg text-slate-400 group-hover:text-[#10B981] transition-colors shrink-0">
+              {copiedField === "Phone number" ? <Check className="w-4 h-4 text-[#10B981]" /> : <Copy className="w-4 h-4" />}
+            </div>
+          </div>
         </div>
 
-        {/* Row of Social Icons (Instagram, Dribbble, GitHub, LinkedIn, Email) */}
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-3.5 mb-10 sm:mb-16">
+        {/* Row of Social Icons */}
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-16">
           <a
             href={siteConfig.socials.instagram}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#180c24] hover:bg-[#2a1245] border border-[#8b5cf6]/30 hover:border-[#8b5cf6] flex items-center justify-center text-purple-300 hover:text-white transition-all shadow-[0_0_15px_rgba(139,92,246,0.15)] active:scale-95"
+            className="w-11 h-11 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-[#10B981]/60 flex items-center justify-center text-slate-300 hover:text-[#10B981] transition-all shadow-md active:scale-95"
           >
-            <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
+            <Instagram className="w-5 h-5" />
           </a>
 
           <a
@@ -105,9 +168,9 @@ export const ContactSection: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#180c24] hover:bg-[#2a1245] border border-[#8b5cf6]/30 hover:border-[#8b5cf6] flex items-center justify-center text-purple-300 hover:text-white transition-all shadow-[0_0_15px_rgba(139,92,246,0.15)] active:scale-95"
+            className="w-11 h-11 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-[#10B981]/60 flex items-center justify-center text-slate-300 hover:text-[#10B981] transition-all shadow-md active:scale-95"
           >
-            <Github className="w-4 h-4 sm:w-5 sm:h-5" />
+            <Github className="w-5 h-5" />
           </a>
 
           <a
@@ -115,31 +178,33 @@ export const ContactSection: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#180c24] hover:bg-[#2a1245] border border-[#8b5cf6]/30 hover:border-[#8b5cf6] flex items-center justify-center text-purple-300 hover:text-white transition-all shadow-[0_0_15px_rgba(139,92,246,0.15)] active:scale-95"
+            className="w-11 h-11 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-[#10B981]/60 flex items-center justify-center text-slate-300 hover:text-[#10B981] transition-all shadow-md active:scale-95"
           >
-            <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
+            <Linkedin className="w-5 h-5" />
           </a>
 
           <a
-            href={`mailto:${siteConfig.personal.email}`}
-            aria-label="Email Direct"
-            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#180c24] hover:bg-[#2a1245] border border-[#8b5cf6]/30 hover:border-[#8b5cf6] flex items-center justify-center text-purple-300 hover:text-white transition-all shadow-[0_0_15px_rgba(139,92,246,0.15)] active:scale-95"
+            href={siteConfig.socials.photographySite}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Perfect Click Media Site"
+            className="w-11 h-11 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-[#10B981]/60 flex items-center justify-center text-slate-300 hover:text-[#10B981] transition-all shadow-md active:scale-95"
           >
-            <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
+            <Globe className="w-5 h-5" />
           </a>
         </div>
 
-        {/* Styled Dark Translucent Contact Form */}
+        {/* Contact Form */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="clay-card rounded-3xl p-5 sm:p-10 backdrop-blur-xl shadow-[0_0_50px_rgba(139,92,246,0.2)] max-w-2xl mx-auto text-left"
+          className="rounded-3xl bg-slate-900/60 border border-slate-800 p-6 sm:p-10 backdrop-blur-xl shadow-2xl max-w-2xl mx-auto text-left"
         >
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-xs font-mono text-purple-300 mb-2">
+              <label htmlFor="name" className="block text-xs font-mono text-slate-300 mb-2 font-bold uppercase tracking-wider">
                 YOUR NAME *
               </label>
               <input
@@ -150,12 +215,12 @@ export const ContactSection: React.FC = () => {
                 onChange={handleChange}
                 placeholder="e.g. Alex Turner"
                 required
-                className="w-full px-4 py-3.5 rounded-xl bg-[#0e0812]/90 border border-[#8b5cf6]/25 text-white placeholder-slate-500 focus:outline-none focus:border-[#8b5cf6] focus:ring-1 focus:ring-[#8b5cf6]/50 transition-all text-sm"
+                className="w-full px-4 py-3.5 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-[#10B981] focus:ring-1 focus:ring-[#10B981]/50 transition-all text-sm"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-xs font-mono text-purple-300 mb-2">
+              <label htmlFor="email" className="block text-xs font-mono text-slate-300 mb-2 font-bold uppercase tracking-wider">
                 YOUR EMAIL *
               </label>
               <input
@@ -166,12 +231,12 @@ export const ContactSection: React.FC = () => {
                 onChange={handleChange}
                 placeholder="e.g. alex@example.com"
                 required
-                className="w-full px-4 py-3.5 rounded-xl bg-[#0e0812]/90 border border-[#8b5cf6]/25 text-white placeholder-slate-500 focus:outline-none focus:border-[#8b5cf6] focus:ring-1 focus:ring-[#8b5cf6]/50 transition-all text-sm"
+                className="w-full px-4 py-3.5 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-[#10B981] focus:ring-1 focus:ring-[#10B981]/50 transition-all text-sm"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-xs font-mono text-purple-300 mb-2">
+              <label htmlFor="message" className="block text-xs font-mono text-slate-300 mb-2 font-bold uppercase tracking-wider">
                 YOUR MESSAGE *
               </label>
               <textarea
@@ -182,7 +247,7 @@ export const ContactSection: React.FC = () => {
                 onChange={handleChange}
                 placeholder="Tell me about your project, idea, or inquiry..."
                 required
-                className="w-full px-4 py-3.5 rounded-xl bg-[#0e0812]/90 border border-[#8b5cf6]/25 text-white placeholder-slate-500 focus:outline-none focus:border-[#8b5cf6] focus:ring-1 focus:ring-[#8b5cf6]/50 transition-all text-sm resize-none"
+                className="w-full px-4 py-3.5 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-[#10B981] focus:ring-1 focus:ring-[#10B981]/50 transition-all text-sm resize-none"
               />
             </div>
 
@@ -191,8 +256,8 @@ export const ContactSection: React.FC = () => {
               <div
                 className={`p-4 rounded-xl text-xs sm:text-sm flex items-start gap-2.5 ${
                   status.type === "success"
-                    ? "bg-emerald-950/40 text-emerald-300 border border-emerald-800"
-                    : "bg-red-950/40 text-red-300 border border-red-800"
+                    ? "bg-emerald-950/50 text-emerald-300 border border-emerald-800"
+                    : "bg-red-950/50 text-red-300 border border-red-800"
                 }`}
               >
                 {status.type === "success" ? (
@@ -207,15 +272,15 @@ export const ContactSection: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-4 rounded-xl bg-[#8b5cf6] hover:bg-[#7c3aed] text-white font-bold text-sm inline-flex items-center justify-center gap-2 transition-all shadow-[0_0_30px_rgba(139,92,246,0.35)] disabled:opacity-50"
+              className="w-full py-4 rounded-xl bg-[#10B981] hover:bg-[#059669] text-slate-950 font-bold text-sm inline-flex items-center justify-center gap-2 transition-all shadow-[0_0_25px_rgba(16,185,129,0.3)] disabled:opacity-50 active:scale-98"
             >
               {loading ? (
                 <>
-                  <Loader2 className="w-4 h-4 animate-spin" /> Sending Message...
+                  <Loader2 className="w-4 h-4 animate-spin text-slate-950" /> Sending Message...
                 </>
               ) : (
                 <>
-                  Send Message <Send className="w-4 h-4" />
+                  Send Message <Send className="w-4 h-4 text-slate-950" />
                 </>
               )}
             </button>
@@ -226,3 +291,4 @@ export const ContactSection: React.FC = () => {
     </section>
   );
 };
+

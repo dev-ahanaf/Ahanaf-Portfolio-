@@ -16,7 +16,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#0e0812",
+  themeColor: "#08090C",
 };
 
 export const metadata: Metadata = {
@@ -61,7 +61,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body className={`${inter.variable} font-sans bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950`}>
+      <body className={`${inter.variable} font-sans bg-[#08090C] text-slate-100 antialiased selection:bg-[#10B981] selection:text-slate-950`}>
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

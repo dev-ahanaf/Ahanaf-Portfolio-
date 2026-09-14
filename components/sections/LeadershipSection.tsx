@@ -47,9 +47,9 @@ export const LeadershipSection: React.FC = () => {
       : null;
 
   return (
-    <section id="leadership" className="py-14 sm:py-20 lg:py-24 bg-slate-950 text-white relative">
+    <section id="leadership" className="py-14 sm:py-20 lg:py-24 bg-[#08090C] text-white relative">
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-purple-500/5 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-[#10B981]/5 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
@@ -66,19 +66,19 @@ export const LeadershipSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: idx * 0.15 }}
-              className="rounded-3xl bg-gradient-to-b from-slate-900/90 via-slate-900 to-slate-950 border border-slate-800 p-5 sm:p-10 backdrop-blur-xl shadow-2xl relative overflow-hidden"
+              className="rounded-3xl bg-slate-900/60 border border-slate-800 p-5 sm:p-10 backdrop-blur-xl shadow-2xl relative overflow-hidden"
             >
               {/* Highlight Glow Corner */}
-              <div className="absolute top-0 right-0 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-72 h-72 bg-[#10B981]/10 rounded-full blur-3xl pointer-events-none" />
 
               {/* Header Info */}
               <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 sm:gap-6 mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-slate-800">
                 <div className="flex items-start gap-3.5 sm:gap-4">
-                  <div className="p-3 sm:p-4 rounded-2xl bg-purple-500/10 border border-purple-500/30 text-purple-400 shrink-0">
-                    {idx === 1 ? <Cpu className="w-6 h-6 sm:w-8 sm:h-8 text-cyan-400" /> : <ShieldCheck className="w-6 h-6 sm:w-8 sm:h-8 text-amber-400" />}
+                  <div className="p-3 sm:p-4 rounded-2xl bg-[#10B981]/10 border border-[#10B981]/30 text-[#10B981] shrink-0">
+                    {idx === 1 ? <Cpu className="w-6 h-6 sm:w-8 sm:h-8 text-[#10B981]" /> : <ShieldCheck className="w-6 h-6 sm:w-8 sm:h-8 text-amber-400" />}
                   </div>
                   <div>
-                    <span className="px-3 py-0.5 sm:px-3.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-mono bg-purple-500/10 text-purple-300 border border-purple-500/20 font-bold mb-1.5 sm:mb-2 inline-block">
+                    <span className="px-3 py-0.5 sm:px-3.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-mono bg-[#10B981]/10 text-emerald-300 border border-[#10B981]/30 font-bold mb-1.5 sm:mb-2 inline-block">
                       {item.organization}
                     </span>
                     <h3 className="text-xl sm:text-3xl font-black text-white font-display">
@@ -87,7 +87,7 @@ export const LeadershipSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-2xl bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-mono font-bold flex items-center gap-2 shadow-lg shadow-amber-500/10 shrink-0">
+                <div className="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-2xl bg-amber-500/10 text-amber-300 border border-amber-500/30 text-xs font-mono font-bold flex items-center gap-2 shadow-lg shadow-amber-500/10 shrink-0">
                   <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
                   <span>{item.achievements[0]}</span>
                 </div>
@@ -96,16 +96,16 @@ export const LeadershipSection: React.FC = () => {
               {/* Courses / Modules */}
               {item.courses && (
                 <div className="mb-6 sm:mb-8">
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-purple-400 font-bold mb-3 flex items-center gap-2">
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#10B981] font-bold mb-3 flex items-center gap-2">
                     <BookOpen className="w-4 h-4" /> Training, Workshops & Credentials
                   </h4>
                   <div className="flex flex-wrap gap-2 sm:gap-3">
                     {item.courses.map((course, cIdx) => (
                       <div
                         key={cIdx}
-                        className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-slate-900 border border-purple-500/30 text-slate-200 text-xs font-mono font-semibold flex items-center gap-2 shadow-sm"
+                        className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-slate-900 border border-[#10B981]/25 text-slate-200 text-xs font-mono font-semibold flex items-center gap-2 shadow-sm"
                       >
-                        <span className="w-2 h-2 rounded-full bg-purple-400" />
+                        <span className="w-2 h-2 rounded-full bg-[#10B981]" />
                         <span>{course}</span>
                       </div>
                     ))}
@@ -123,9 +123,9 @@ export const LeadershipSection: React.FC = () => {
                 {item.bullets.map((bullet, bIdx) => (
                   <div
                     key={bIdx}
-                    className="flex items-start gap-2.5 sm:gap-3 p-3.5 sm:p-4 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-purple-500/40 transition-colors"
+                    className="flex items-start gap-2.5 sm:gap-3 p-3.5 sm:p-4 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-[#10B981]/40 transition-colors"
                   >
-                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 shrink-0 mt-0.5" />
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#10B981] shrink-0 mt-0.5" />
                     <span className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                       {bullet}
                     </span>
@@ -137,7 +137,7 @@ export const LeadershipSection: React.FC = () => {
               {item.galleryImages && item.galleryImages.length > 0 && (
                 <div className="pt-6 border-t border-slate-800">
                   <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold mb-4 flex items-center gap-2">
-                    <Users className="w-4 h-4 text-purple-400" /> Event & Activity Gallery
+                    <Users className="w-4 h-4 text-[#10B981]" /> Event & Activity Gallery (Click to Expand)
                   </h4>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -146,7 +146,7 @@ export const LeadershipSection: React.FC = () => {
                         key={imgIdx}
                         whileHover={{ scale: 1.03 }}
                         onClick={() => setActiveModal({ itemIdx: idx, imgIdx })}
-                        className="group relative h-48 sm:h-56 rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-purple-500/50 cursor-pointer shadow-lg active:scale-95"
+                        className="group relative h-48 sm:h-56 rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-[#10B981]/60 cursor-pointer shadow-lg active:scale-95"
                       >
                         <Image
                           src={img.url}
@@ -158,7 +158,7 @@ export const LeadershipSection: React.FC = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
 
                         <div className="absolute top-3 left-3 z-10">
-                          <span className="px-2.5 py-0.5 text-[10px] font-mono rounded-full bg-slate-950/80 text-purple-300 border border-purple-500/30 backdrop-blur-md">
+                          <span className="px-2.5 py-0.5 text-[10px] font-mono rounded-full bg-slate-950/80 text-emerald-300 border border-[#10B981]/30 backdrop-blur-md">
                             {img.tag}
                           </span>
                         </div>
@@ -167,7 +167,7 @@ export const LeadershipSection: React.FC = () => {
                           <p className="text-xs font-semibold text-white line-clamp-2 pr-2">
                             {img.caption}
                           </p>
-                          <Maximize2 className="w-4 h-4 text-purple-400 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
+                          <Maximize2 className="w-4 h-4 text-[#10B981] shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
                         </div>
                       </motion.div>
                     ))}
@@ -229,7 +229,7 @@ export const LeadershipSection: React.FC = () => {
               {/* Caption Footer */}
               <div className="p-6 bg-slate-950 border-t border-slate-800 flex items-center justify-between">
                 <div>
-                  <span className="px-3 py-1 rounded-full text-xs font-mono bg-purple-500/10 text-purple-300 border border-purple-500/30 font-bold mb-2 inline-block">
+                  <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#10B981]/10 text-emerald-300 border border-[#10B981]/30 font-bold mb-2 inline-block">
                     {currentModalImg.tag}
                   </span>
                   <p className="text-sm text-slate-200 font-medium">

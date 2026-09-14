@@ -3,13 +3,11 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, FileText } from "lucide-react";
+import { FileText } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,7 +62,7 @@ export const Navbar: React.FC = () => {
           ))}
         </nav>
 
-        {/* Action Button & Mobile Toggle */}
+        {/* Action Button */}
         <div className="flex items-center gap-2 sm:gap-3">
           <a
             href={siteConfig.personal.resumeUrl}
@@ -74,50 +72,8 @@ export const Navbar: React.FC = () => {
           >
             <FileText className="w-3.5 h-3.5" /> Resume
           </a>
-
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle Menu"
-            className="md:hidden p-2 rounded-xl bg-[#0F131C] border border-[#10B981]/30 text-slate-300 hover:text-white"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
       </div>
-
-      {/* Mobile Drawer */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#08090C]/95 border-b border-[#10B981]/30 backdrop-blur-xl px-4 py-6"
-          >
-            <div className="flex flex-col gap-3">
-              {navItems.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-4 py-2.5 text-sm font-medium text-slate-300 hover:text-[#10B981] hover:bg-[#0F131C] rounded-xl transition-all"
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <a
-                href={siteConfig.personal.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMobileMenuOpen(false)}
-                className="mt-2 px-4 py-2.5 rounded-xl bg-[#10B981] text-slate-950 font-bold text-sm text-center"
-              >
-                Download Resume
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </header>
   );
 };

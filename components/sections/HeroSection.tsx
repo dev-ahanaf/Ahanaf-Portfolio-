@@ -49,12 +49,30 @@ export const HeroSection: React.FC = () => {
           {/* Profile Orbit Container */}
           <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] flex items-center justify-center">
             
-            {/* Floating Speech Bubble at Right (Outside Orbit Path) */}
-            <div className="absolute top-4 -right-14 sm:top-6 sm:-right-24 bg-[#1a0b2e] text-white border border-[#8b5cf6]/40 px-3.5 sm:px-4 py-1.5 rounded-2xl text-[11px] sm:text-sm font-semibold shadow-[0_0_20px_rgba(139,92,246,0.35)] whitespace-nowrap z-30 flex items-center gap-1.5">
-              <span>Hello! I Am <strong className="text-[#8b5cf6] font-bold">{siteConfig.personal.name}</strong></span>
-              <span className="text-sm sm:text-base">👋</span>
-              {/* Bubble Tail Arrow pointing left towards orbit */}
-              <div className="absolute top-1/2 -left-2 -translate-y-1/2 w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-r-[8px] border-r-[#1a0b2e]" />
+            {/* Floating Speech Bubble & Red Accent at Top-Right (Fully Outside Orbit Ring) */}
+            <div className="absolute -top-8 -right-8 sm:-top-14 sm:-right-16 z-30 pointer-events-auto">
+              {/* Red Scribble Accent in Top-Right Corner */}
+              <svg
+                className="absolute -top-4 -right-3 sm:-top-5 sm:-right-4 w-12 h-6 sm:w-14 sm:h-7 text-rose-500 pointer-events-none opacity-90 z-40 overflow-visible"
+                viewBox="0 0 60 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5,18 C15,8 40,5 55,12 C45,18 20,22 10,25 C25,24 45,20 52,16"
+                  stroke="currentColor"
+                  strokeWidth="2.8"
+                  strokeLinecap="round"
+                />
+              </svg>
+
+              {/* Rounded Speech Bubble Badge */}
+              <div className="relative bg-[#1a0b2e] text-white border border-[#8b5cf6]/40 px-3.5 sm:px-4 py-1.5 rounded-2xl text-[11px] sm:text-sm font-semibold shadow-[0_0_20px_rgba(139,92,246,0.35)] whitespace-nowrap flex items-center gap-1.5">
+                <span>Hello! I Am <strong className="text-[#8b5cf6] font-bold">{siteConfig.personal.name}</strong></span>
+                <span className="text-sm sm:text-base">👋</span>
+                {/* Pointer Tail Arrow aimed back down-left toward profile circle */}
+                <div className="absolute -bottom-2 left-6 sm:left-8 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#1a0b2e] -rotate-12" />
+              </div>
             </div>
 
             {/* Avatar Soft Purple Glow Background */}

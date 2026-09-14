@@ -37,9 +37,8 @@ export const HeroSection: React.FC = () => {
         
         {/* Top Centered Circular Avatar & Orbiting Ring */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={false}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
           className="relative mt-4 sm:mt-8 mb-6 flex flex-col items-center justify-center"
         >
           {/* Profile Orbit Container */}
@@ -127,23 +126,13 @@ export const HeroSection: React.FC = () => {
         </motion.div>
 
         {/* Small Eyebrow Line */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="inline-flex items-center gap-2 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full bg-[#0F131C]/90 border border-[#10B981]/30 text-[#10B981] text-[11px] sm:text-xs font-mono mb-3 shadow-[0_0_15px_rgba(16,185,129,0.1)]"
-        >
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full bg-[#0F131C]/90 border border-[#10B981]/30 text-[#10B981] text-[11px] sm:text-xs font-mono mb-3 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
           <Sparkles className="w-3.5 h-3.5" />
           <span>{siteConfig.personal.eyebrow}</span>
-        </motion.div>
+        </div>
 
         {/* Large Two-line Headline with Hand-drawn Ellipse */}
-        <motion.h1
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-xl sm:text-3xl md:text-5xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight mb-3 max-w-4xl font-display"
-        >
+        <h1 className="text-xl sm:text-3xl md:text-5xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight mb-3 max-w-4xl font-display">
           <span className="whitespace-nowrap">
             {siteConfig.personal.headlineLine1}
             <span className="relative inline-block text-[#10B981] px-1.5 sm:px-2 font-black">
@@ -166,46 +155,26 @@ export const HeroSection: React.FC = () => {
             </span>
           </span>{" "}
           <span className="block sm:inline">{siteConfig.personal.headlineLine2}</span>
-        </motion.h1>
+        </h1>
 
         {/* Headline Subtext */}
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-slate-400 text-xs sm:text-base font-mono mb-5 sm:mb-6 max-w-2xl px-2"
-        >
+        <p className="text-slate-400 text-xs sm:text-base font-mono mb-5 sm:mb-6 max-w-2xl px-2">
           &ldquo;{siteConfig.personal.headlineSubtext}&rdquo;
-        </motion.p>
+        </p>
 
         {/* Animated Typewriter Line */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-base sm:text-2xl font-mono text-slate-300 mb-5 sm:mb-6 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 px-2"
-        >
+        <div className="text-base sm:text-2xl font-mono text-slate-300 mb-5 sm:mb-6 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 px-2">
           <span className="text-slate-400">I&apos;m a</span>
           <Typewriter words={roles} />
-        </motion.div>
+        </div>
 
         {/* Short Bio Paragraph */}
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-[#c9c3d1] text-xs sm:text-base lg:text-lg max-w-2xl leading-relaxed mb-6 sm:mb-8 px-2"
-        >
+        <p className="text-[#c9c3d1] text-xs sm:text-base lg:text-lg max-w-2xl leading-relaxed mb-6 sm:mb-8 px-2">
           {siteConfig.personal.shortIntro}
-        </motion.p>
+        </p>
 
         {/* Action CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto px-4"
-        >
+        <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto px-4">
           <Link
             href="#achievements"
             className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#10B981] to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-slate-950 font-extrabold text-xs sm:text-sm inline-flex items-center justify-center gap-2 transition-all shadow-[0_0_25px_rgba(16,185,129,0.3)] active:scale-95"
@@ -226,7 +195,7 @@ export const HeroSection: React.FC = () => {
           >
             <Mail className="w-4 h-4 text-[#10B981]" /> Contact Me
           </Link>
-        </motion.div>
+        </div>
 
       </div>
     </section>

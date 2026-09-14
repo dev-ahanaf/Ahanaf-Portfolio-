@@ -87,14 +87,14 @@ export const GlowingOrbDivider: React.FC = () => {
               ))}
             </motion.div>
 
-            {/* Minimal Centerpiece Core */}
-            <div className="relative w-36 h-36 sm:w-44 sm:h-44 flex items-center justify-center p-3 rounded-full bg-[#08090C] border border-[#10B981]/40 shadow-[0_0_35px_rgba(16,185,129,0.2)] z-10">
+            {/* Minimal Centerpiece Core (Seamless transparent background & no border) */}
+            <div className="relative w-36 h-36 sm:w-44 sm:h-44 flex items-center justify-center bg-transparent z-10">
               <Image
                 src="/logo.png"
                 alt={siteConfig.personal.name}
                 width={160}
                 height={160}
-                className="w-full h-full object-contain rounded-lg"
+                className="w-full h-full object-contain"
               />
             </div>
 

@@ -1,15 +1,16 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Code, Settings, FileText, Figma, Layers, Sparkles, Database, Terminal, Cpu } from "lucide-react";
+import { Code, Settings, FileText, Figma } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 
 export const GlowingOrbDivider: React.FC = () => {
   return (
     <section className="py-20 bg-[#0e0812] text-white relative overflow-hidden select-none border-y border-[#8b5cf6]/15">
       {/* Background Deep Violet Radial Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#2a1245]/60 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#2a1245]/60 rounded-full blur-[80px] pointer-events-none transform-gpu" />
 
       <div className="max-w-5xl mx-auto px-4 text-center relative z-10 space-y-12">
         
@@ -79,9 +80,11 @@ export const GlowingOrbDivider: React.FC = () => {
 
               {/* Minimal Centerpiece Core */}
               <div className="relative w-32 h-32 sm:w-40 sm:h-40 flex items-center justify-center p-2">
-                <img
+                <Image
                   src="/logo.png"
                   alt={siteConfig.personal.name}
+                  width={160}
+                  height={160}
                   className="w-full h-full object-contain rounded-lg shadow-[0_0_30px_rgba(139,92,246,0.3)]"
                 />
               </div>

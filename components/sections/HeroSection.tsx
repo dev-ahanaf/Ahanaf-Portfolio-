@@ -31,8 +31,8 @@ export const HeroSection: React.FC = () => {
       className="relative min-h-screen pt-32 sm:pt-40 lg:pt-44 pb-12 sm:pb-16 flex items-center justify-center overflow-hidden bg-[#0e0812] text-white"
     >
       {/* Focal Point Purple Radial Glow behind hero */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[700px] h-[320px] sm:h-[700px] bg-gradient-to-tr from-[#2a1245] via-[#4a1f7a]/30 to-transparent rounded-full blur-[100px] sm:blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-[#8b5cf6]/10 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[700px] h-[320px] sm:h-[700px] bg-gradient-to-tr from-[#2a1245] via-[#4a1f7a]/30 to-transparent rounded-full blur-[60px] sm:blur-[80px] pointer-events-none transform-gpu" />
+      <div className="absolute bottom-10 right-10 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-[#8b5cf6]/10 rounded-full blur-[50px] sm:blur-[70px] pointer-events-none transform-gpu" />
 
       {/* Grid Pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#2a1245_1px,transparent_1px),linear-gradient(to_bottom,#2a1245_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-15 pointer-events-none" />

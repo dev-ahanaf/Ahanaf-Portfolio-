@@ -9,6 +9,7 @@ import { siteConfig } from "@/data/siteConfig";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
 });
 
 export const viewport: Viewport = {

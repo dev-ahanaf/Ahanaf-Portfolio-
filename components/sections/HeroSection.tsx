@@ -42,10 +42,10 @@ export const HeroSection: React.FC = () => {
           className="relative mt-4 sm:mt-8 mb-6 flex flex-col items-center justify-center"
         >
           {/* Profile Orbit Container */}
-          <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] flex items-center justify-center">
+          <div className="relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] flex items-center justify-center">
             
-            {/* Floating Speech Bubble at Top-Right (Shifted Up & Right, Fully Outside Orbit Ring) */}
-            <div className="absolute -top-12 -right-12 sm:-top-20 sm:-right-24 z-30 pointer-events-auto">
+            {/* Floating Speech Bubble at Top-Right (Fully Outside Orbit Ring) */}
+            <div className="absolute -top-10 -right-4 sm:-top-20 sm:-right-24 z-30 pointer-events-auto">
               <div className="relative bg-[#0F131C] text-slate-200 border border-[#10B981]/40 px-3.5 sm:px-4 py-1.5 rounded-2xl text-[11px] sm:text-sm font-semibold shadow-[0_0_20px_rgba(16,185,129,0.15)] whitespace-nowrap flex items-center gap-1.5">
                 <span>Hello! I Am <strong className="text-[#10B981] font-bold">{siteConfig.personal.name}</strong></span>
                 <span className="text-sm sm:text-base">👋</span>
@@ -58,13 +58,13 @@ export const HeroSection: React.FC = () => {
             <div className="absolute inset-4 rounded-full bg-[#10B981]/20 blur-[30px] pointer-events-none" />
 
             {/* Dashed Guide Ring (orbit-guide) */}
-            <div className="absolute w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] rounded-full border-[1.5px] border-dashed border-[#10B981]/35 z-10 pointer-events-none" />
+            <div className="absolute w-[210px] h-[210px] sm:w-[300px] sm:h-[300px] rounded-full border-[1.5px] border-dashed border-[#10B981]/35 z-10 pointer-events-none" />
 
             {/* Rotating Orbit Layer (orbit-ring) */}
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
-              className="absolute w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] rounded-full z-20 pointer-events-none"
+              className="absolute w-[210px] h-[210px] sm:w-[300px] sm:h-[300px] rounded-full z-20 pointer-events-none"
             >
               {/* Icon 1: Top (0deg) */}
               <div className="absolute -top-4.5 sm:-top-5 left-1/2 -translate-x-1/2">
@@ -112,13 +112,13 @@ export const HeroSection: React.FC = () => {
             </motion.div>
 
             {/* Static Profile Picture (profile-pic) */}
-            <div className="relative w-[190px] h-[190px] sm:w-[220px] sm:h-[220px] rounded-full overflow-hidden border-2 border-[#10B981]/70 shadow-[0_0_30px_rgba(16,185,129,0.25)] bg-[#0F131C] z-10 flex items-center justify-center">
+            <div className="relative w-[150px] h-[150px] sm:w-[220px] sm:h-[220px] rounded-full overflow-hidden border-2 border-[#10B981]/70 shadow-[0_0_30px_rgba(16,185,129,0.25)] bg-[#0F131C] z-10 flex items-center justify-center">
               <Image
                 src={siteConfig.personal.avatarImageUrl}
                 alt="Fayek Ahanaf - DIU CIS Student"
                 fill
                 priority
-                sizes="(max-width: 640px) 190px, 220px"
+                sizes="(max-width: 640px) 150px, 220px"
                 className="object-cover object-top"
               />
             </div>

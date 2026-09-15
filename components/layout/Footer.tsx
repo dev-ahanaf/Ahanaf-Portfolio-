@@ -25,9 +25,7 @@ export const Footer: React.FC = () => {
               {siteConfig.personal.name}
             </Link>
             <p className="text-[#c9c3d1] text-sm max-w-sm mb-6 leading-relaxed">
-              {siteConfig.personal.subtitle}
-              <br />
-              <span className="text-slate-400 text-xs">{siteConfig.personal.shortIntro}</span>
+              Engineering autonomous robotics, modern web applications, and creative visual media.
             </p>
 
             {/* Social Icons */}

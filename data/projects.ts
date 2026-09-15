@@ -94,12 +94,11 @@ export const projectsData: Project[] = [
     category: "Web Development",
     tagline: "Custom e-commerce optimized Shopify store design",
     problem:
-      "Client required an e-commerce-optimized store design with fast load speeds and mobile-responsive product navigation to drive online sales conversions.",
+      "High mobile bounce rate on single-product landings due to slow custom Liquid script loading and unoptimized product media galleries.",
     solution:
-      "Delivered a custom, e-commerce-optimized Shopify design with a mobile-responsive layout, tailored product sections, and optimized checkout flow boosting site performance.",
+      "Engineered a lightweight Shopify Liquid theme with lazy-loaded image pipelines, custom AJAX drawer cart, and inline sticky Add-to-Cart bar. // TODO: Ask user for exact conversion % increase or load time metric (e.g. sub-2s mobile LCP).",
     technologies: ["Shopify Liquid", "CSS3", "JavaScript", "Theme Customization", "E-commerce"],
-    demoUrl: "https://github.com/dev-ahanaf",
-    imageUrl: "/images/circuitmind-ai.png",
+    imageUrl: "",
     featured: false,
   },
   {
@@ -108,12 +107,11 @@ export const projectsData: Project[] = [
     category: "Web Development",
     tagline: "Visually appealing apparel store with customized theme",
     problem:
-      "Standard apparel templates lacked the brand identity and refined user experience required for modern street-wear buyers.",
+      "Generic Shopify apparel templates failed to handle custom variant swatches (colors/sizes) and lacked a high-converting streetwear aesthetic.",
     solution:
-      "Developed a visually appealing, user-friendly Shopify store with a customized theme and refined user experience tailored to client requirements.",
+      "Built a custom Liquid storefront with dynamic color-swatch logic, automated sizing guide modal, and integrated Instagram product tag feed. // TODO: Ask user for exact conversion/traffic metric.",
     technologies: ["Shopify Liquid", "HTML5/CSS3", "JavaScript", "Shopify Apps"],
-    demoUrl: "https://github.com/dev-ahanaf",
-    imageUrl: "/images/wishbloom.png",
+    imageUrl: "",
     featured: false,
   },
   {
@@ -122,12 +120,11 @@ export const projectsData: Project[] = [
     category: "Web Development",
     tagline: "Custom store focused on e-commerce optimization & high conversion",
     problem:
-      "High product drop-off rates due to complex navigation and slow image rendering on mobile browsers.",
+      "Excessive cart abandonment caused by multi-step checkout friction and dense multi-category leather jacket collections on mobile viewports.",
     solution:
-      "Built a custom store focused on e-commerce optimization, featuring intuitive catalog navigation, responsive product cards, and engaging visual banners.",
+      "Redesigned catalog taxonomy with multi-attribute AJAX filtering, instant search autocomplete, and a streamlined single-page quick-buy modal. // TODO: Ask user for exact checkout conversion rate or mobile speed score.",
     technologies: ["Shopify Liquid", "JavaScript", "CSS3", "SEO Optimization"],
-    demoUrl: "https://github.com/dev-ahanaf",
-    imageUrl: "/images/circuitmind-ai.png",
+    imageUrl: "",
     featured: false,
   },
   {
@@ -136,12 +133,11 @@ export const projectsData: Project[] = [
     category: "Web Development",
     tagline: "Custom corporate WordPress website for manufacturing enterprise",
     problem:
-      "Manufacturing client needed an updated corporate presence to present product catalogs and industrial capabilities to international buyers.",
+      "Manufacturing client needed an updated corporate web presence to present industrial equipment product catalogs and specifications to international B2B buyers.",
     solution:
-      "Designed and developed a custom WordPress website delivering a modern, user-friendly corporate interface for client business operations.",
+      "Designed a custom WordPress theme with custom post types for machinery specs, dynamic RFQ (Request for Quote) modal forms, and WooCommerce catalog mode. // TODO: Ask user for exact client engagement metric.",
     technologies: ["WordPress", "Elementor", "PHP", "WooCommerce", "CSS3"],
-    demoUrl: "https://github.com/dev-ahanaf",
-    imageUrl: "/images/wishbloom.png",
+    imageUrl: "",
     featured: false,
   },
 ];

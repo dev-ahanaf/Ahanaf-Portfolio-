@@ -108,18 +108,6 @@ export const PhotographySection: React.FC = () => {
               <h3 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
                 <Camera className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" /> Selected Photography Previews
               </h3>
-              <p className="text-xs text-slate-400 mt-1">
-                Explore samples below or visit{" "}
-                <a
-                  href="https://perfect-click-com-bd.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-purple-400 hover:underline"
-                >
-                  perfect-click-com-bd.vercel.app
-                </a>{" "}
-                for the complete gallery.
-              </p>
             </div>
 
             {/* Category Tabs */}
@@ -140,10 +128,10 @@ export const PhotographySection: React.FC = () => {
             </div>
           </div>
 
-          {/* Photo Gallery Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+          {/* Photo Gallery Grid - Max 3 Preview Images */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             <AnimatePresence>
-              {filteredPhotos.map((photo) => (
+              {filteredPhotos.slice(0, 3).map((photo) => (
                 <motion.div
                   key={photo.id}
                   layout
@@ -158,7 +146,7 @@ export const PhotographySection: React.FC = () => {
                     src={photo.imageUrl}
                     alt={photo.title}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    sizes="(max-width: 640px) 100vw, 33vw"
                     className="object-cover group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />

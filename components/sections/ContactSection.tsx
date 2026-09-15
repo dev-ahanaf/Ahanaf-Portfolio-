@@ -33,6 +33,7 @@ export const ContactSection: React.FC = () => {
   }>({ type: null, message: "" });
 
   const [copiedField, setCopiedField] = useState<string | null>(null);
+  const [isPhoneRevealed, setIsPhoneRevealed] = useState(false);
 
   const copyToClipboard = (text: string, label: string) => {
     navigator.clipboard.writeText(text);
@@ -50,10 +51,20 @@ export const ContactSection: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
       setStatus({
         type: "error",
-        message: "Please complete all fields before submitting.",
+        message: "Please complete all fields (Name, Email, and Message) before submitting.",
+      });
+      return;
+    }
+
+    if (!emailRegex.test(formData.email.trim())) {
+      setStatus({
+        type: "error",
+        message: "Please enter a valid email address (e.g. name@example.com).",
       });
       return;
     }
@@ -69,6 +80,14 @@ export const ContactSection: React.FC = () => {
       setFormData({ name: "", email: "", message: "" });
     } else {
       setStatus({ type: "error", message: response.message });
+    }
+  };
+
+  const handlePhoneClick = () => {
+    if (!isPhoneRevealed) {
+      setIsPhoneRevealed(true);
+    } else {
+      copyToClipboard(siteConfig.personal.phone, "Phone number");
     }
   };
 
@@ -129,9 +148,9 @@ export const ContactSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Phone Card */}
+          {/* Phone Card - Click to Reveal / Click to Copy */}
           <div
-            onClick={() => copyToClipboard(siteConfig.personal.phone, "Phone number")}
+            onClick={handlePhoneClick}
             className="group relative p-4 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-[#10B981]/50 cursor-pointer transition-all hover:bg-slate-900 flex items-center justify-between shadow-lg active:scale-95"
           >
             <div className="flex items-center gap-3 text-left">
@@ -141,12 +160,16 @@ export const ContactSection: React.FC = () => {
               <div className="min-w-0">
                 <p className="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold">Phone Direct</p>
                 <p className="text-xs sm:text-sm font-mono font-bold text-white group-hover:text-[#10B981] transition-colors truncate">
-                  {siteConfig.personal.phone}
+                  {isPhoneRevealed ? siteConfig.personal.phone : "••••••••••• (Click to reveal)"}
                 </p>
               </div>
             </div>
             <div className="p-2 rounded-lg text-slate-400 group-hover:text-[#10B981] transition-colors shrink-0">
-              {copiedField === "Phone number" ? <Check className="w-4 h-4 text-[#10B981]" /> : <Copy className="w-4 h-4" />}
+              {isPhoneRevealed ? (
+                copiedField === "Phone number" ? <Check className="w-4 h-4 text-[#10B981]" /> : <Copy className="w-4 h-4" />
+              ) : (
+                <span className="text-[10px] font-mono text-[#10B981] font-bold">Reveal</span>
+              )}
             </div>
           </div>
         </div>

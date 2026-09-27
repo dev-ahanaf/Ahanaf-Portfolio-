@@ -135,21 +135,23 @@ export const HeroSection: React.FC = () => {
         <h1 className="text-xl sm:text-3xl md:text-5xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight mb-3 max-w-4xl font-display">
           <span className="whitespace-nowrap">
             {siteConfig.personal.headlineLine1}
-            <span className="relative inline-block text-[#10B981] px-1.5 sm:px-2 font-black">
+            <span className="relative inline-block text-[#10B981] px-2 sm:px-3 font-black">
               {siteConfig.personal.headlineHighlightedWord}
               {/* SVG Hand-drawn Emerald Ellipse */}
               <svg
-                className="absolute -inset-x-2 -inset-y-1 w-[calc(100%+16px)] h-[calc(100%+8px)] pointer-events-none overflow-visible max-w-full"
-                viewBox="0 0 140 50"
+                className="absolute -inset-x-3 sm:-inset-x-5 -inset-y-2 sm:-inset-y-3 w-[calc(100%+24px)] sm:w-[calc(100%+40px)] h-[calc(100%+16px)] sm:h-[calc(100%+24px)] pointer-events-none overflow-visible"
+                viewBox="0 0 220 70"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="none"
               >
                 <path
-                  d="M8,25 C15,8 125,5 132,25 C138,42 12,45 6,26 C3,16 40,8 128,12"
+                  d="M 20,20 C 50,5 170,3 200,16 C 218,24 216,48 195,58 C 145,67 50,66 18,54 C 2,44 4,22 35,12 C 85,5 175,6 205,18"
                   stroke="#10B981"
-                  strokeWidth="3.5"
+                  strokeWidth="3"
                   strokeLinecap="round"
-                  className="opacity-90"
+                  strokeLinejoin="round"
+                  className="opacity-90 drop-shadow-[0_0_10px_rgba(16,185,129,0.5)]"
                 />
               </svg>
             </span>

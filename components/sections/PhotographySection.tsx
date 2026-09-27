@@ -147,7 +147,7 @@ export const PhotographySection: React.FC = () => {
                     alt={photo.title}
                     fill
                     sizes="(max-width: 640px) 100vw, 33vw"
-                    className="object-cover group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                    className="object-cover object-top group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
 

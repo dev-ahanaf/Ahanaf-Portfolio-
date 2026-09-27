@@ -1,9 +1,11 @@
 export interface SkillCategory {
   id: string;
   title: string;
+  badgeLabel: string;
   description: string;
-  iconName: "code" | "cpu" | "camera" | "figma";
+  iconName: "code" | "cpu" | "camera" | "figma" | "trending-up" | "shopping-bag";
   skills: string[];
+  tools: string[];
 }
 
 export interface AchievementItem {
@@ -60,11 +62,11 @@ export const siteConfig = {
     headlineLine2: " with Vision.",
     headlineSubtext: "Combining software logic, hardware precision, AI tools, and creative media.",
     speechBubble: "Hello! I Am Fayek Ahanaf",
-    currentStatus: "🏆 DIU Robo Camp 2026 & NSTU EEE Day Champion",
+    currentStatus: "🥈 WRG 2026 National Silver Medalist 🇯🇵 Japan Qualifier & DIU Robo Camp Champion",
     shortIntro:
-      "Computing & Information Systems student at Daffodil International University (DIU) focused on autonomous robotics, web engineering, AI tools, and visual media production.",
+      "Computing & Information Systems student at Daffodil International University (DIU) focused on autonomous robotics, web engineering, AI tools, and visual media production. Team Leader of Falcon Bots, National Silver Medalist at World Robot Games 2026.",
     fullBio:
-      "I am Fayek Ahanaf, a CIS student at Daffodil International University (DIU). As Team Leader of Falcon Bots, I build autonomous line follower robots, AI EDA tools like CircuitMind AI, modern web apps, and lead technical workshops for university students.",
+      "I am Fayek Ahanaf, a CIS student at Daffodil International University (DIU). As Team Leader of Falcon Bots, I lead championship autonomous line follower robotics projects—winning 2nd Position (Silver Medal) at the World Robot Games 2026 National Qualifier to represent DIU and Bangladesh in Japan 🇯🇵. I also develop AI tools like CircuitMind AI, build modern web apps, and lead technical workshops.",
     availabilityStatement:
       "Interested in building technology that solves practical problems across software, robotics, and creative media.",
     email: "ahanaffayek@gmail.com",
@@ -117,48 +119,64 @@ export const siteConfig = {
 
   skillsCategories: [
     {
-      id: "hardware-ai",
-      title: "Robotics, AI & Hardware",
-      description: "Microcontroller programming, PID robotics, and AI EDA tools",
-      iconName: "cpu",
+      id: "digital-marketing",
+      title: "Digital Marketing",
+      badgeLabel: "DIGITAL MARKETING",
+      description: "Data-driven campaigns for engagement and lead generation",
+      iconName: "trending-up",
       skills: [
-        "Autonomous PID Robotics",
-        "Arduino & ESP32 Microcontrollers",
-        "Electronics & Circuit Design",
-        "Sensor Arrays & Motor Drivers",
-        "AI EDA & CircuitMind AI",
-        "Gemini / Google AI Studio",
-        "IoT & MQTT Automation",
+        "SEO Optimization",
+        "Social Media Strategy",
+        "Lead Generation",
+        "Campaign Analytics",
+        "Content Marketing",
       ],
+      tools: ["Google Analytics", "Meta Ads Manager", "Canva"],
     },
     {
-      id: "software-engineering",
-      title: "Software & Web Engineering",
-      description: "Building responsive React & Next.js applications",
+      id: "ecommerce-cms",
+      title: "Shopify & WordPress Web Design",
+      badgeLabel: "E-COMMERCE & CMS",
+      description: "Custom storefronts and corporate websites built for conversion",
+      iconName: "shopping-bag",
+      skills: [
+        "Shopify Store Design",
+        "Shopify Liquid Theme Customization",
+        "WordPress Web Design",
+        "Custom PHP",
+        "WooCommerce Integration",
+      ],
+      tools: ["Shopify", "WordPress", "Elementor", "PHP"],
+    },
+    {
+      id: "frontend-development",
+      title: "Frontend Development",
+      badgeLabel: "FRONTEND DEVELOPMENT",
+      description: "Building responsive, modern web interfaces",
       iconName: "code",
       skills: [
-        "React.js & Next.js 14",
-        "TypeScript & ES6+",
-        "Tailwind CSS & Styling",
-        "Python & REST APIs",
-        "Shopify Development & Liquid",
-        "WordPress & Custom PHP",
-        "Git & GitHub Workflow",
-        "Supabase & Databases",
+        "HTML5 & CSS3",
+        "Tailwind CSS",
+        "JavaScript (ES6+)",
+        "Next.js",
+        "React.js",
+        "Responsive Web Design",
       ],
+      tools: ["VS Code", "Git & GitHub", "Vercel", "Figma"],
     },
     {
-      id: "creative-media",
-      title: "Creative Media & Photography",
-      description: "Visual media production and event coverage (Perfect Click Studio)",
+      id: "photography",
+      title: "Professional Photography",
+      badgeLabel: "PHOTOGRAPHY",
+      description: "Event, portrait, and campus photography (Perfect Click Studio)",
       iconName: "camera",
       skills: [
-        "Portrait & Campus Photography",
-        "Event Coverage & Convocations",
-        "Videography & Cinematography",
-        "Short-form Content & Reels",
-        "Video Editing & Lightroom",
+        "Portrait & Event Photography",
+        "Campus & Convocation Coverage",
+        "Photo Editing",
+        "Composition & Lighting",
       ],
+      tools: ["Adobe Lightroom", "Canva Pro"],
     },
   ] as SkillCategory[],
 
@@ -259,25 +277,41 @@ export const siteConfig = {
       title: "Team Leader & Lead Workshop Instructor - Falcon Bots",
       organization: "Team Falcon Bots / Daffodil International University (DIU)",
       description:
-        "Team Leader of robotics team Falcon Bots. Led the team to 1st Place Champion victories in Line Follower Robotics (LFR) and Project Showcases. Conducted the 'Introduction to IoT' technical workshop for CIS Batch 24 and Batch 25 students.",
+        "Team Leader of robotics team Falcon Bots. Led the team to 2nd Position (Silver Medal) at the World Robot Games 2026 National Qualifier (qualifying for Japan 🇯🇵) and multiple 1st Place Champions in Line Follower Robotics. Conducted the 'Introduction to IoT' technical workshop for CIS Batch 24 and Batch 25 students.",
       courses: [
         "Introduction to IoT Workshop (Lead Instructor)",
         "PID Autonomous Robotics Training",
         "Microcontroller & Embedded Hardware",
       ],
       bullets: [
-        "Won 1st Place Champion in all competitions under Team Falcon Bots (DIU RoboCamp LFR Champion, NSTU EEE Day LFR Champion, Project Showcase Special Mention).",
+        "Secured 2nd Position (Silver Medal) at World Robot Games 2026 National Qualifier (Programmable Line Robot - Senior Category), qualifying to represent DIU & Bangladesh in Japan 🇯🇵.",
+        "Won 1st Place Champion at DIU RoboCamp LFR, NSTU EEE Day LFR Champion, and Project Showcase Special Mention.",
         "Conducted and led the 'Introduction to IoT' workshop for DIU CIS Batch 24 & Batch 25 students.",
         "Trained 30+ students in microcontroller hardware, ESP32/Arduino programming, and IoT sensor arrays.",
         "Demonstrated real-time PID line follower robotics control algorithms and hardware assembly.",
       ],
       achievements: [
+        "WRG 2026 Silver Medalist (Japan Qualifier 🇯🇵)",
         "Team Leader - Falcon Bots",
         "DIU RoboCamp 2026 LFR Champion",
         "NSTU EEE Day 2K26 LFR Champion",
-        "IoT Workshop Lead Instructor",
       ],
       galleryImages: [
+        {
+          url: "/images/wrg-2026-silver.jpg",
+          caption: "Fayek Ahanaf with the World Robot Games 2026 1st Runner Up Trophy & Silver Medal.",
+          tag: "WRG 2026 Silver Medal",
+        },
+        {
+          url: "/images/wrg-2026-team.jpg",
+          caption: "Team Falcon Bots (Ahanaf, Nusrat, Shakila, Srijon) at WRG 2026 Closing Ceremony.",
+          tag: "Team Falcon Bots WRG 2026",
+        },
+        {
+          url: "/images/wrg-2026-stage.jpg",
+          caption: "Fayek Ahanaf receiving the Certificate & Trophy on stage at World Robot Games 2026.",
+          tag: "WRG 2026 Stage Award",
+        },
         {
           url: "/images/workshops/workshop-presentation.jpg",
           caption: "Fayek Ahanaf presenting LFR Robotics & IoT concepts to CIS students.",
@@ -292,11 +326,6 @@ export const siteConfig = {
           url: "/images/workshops/workshop-group-participants.png",
           caption: "Group photo of CIS Batch 24 & 25 workshop student participants.",
           tag: "CIS Batch 24 & 25 Group",
-        },
-        {
-          url: "/images/workshops/workshop-hands-on-mentoring.jpg",
-          caption: "Hands-on lab mentoring session guiding students on IoT hardware boards.",
-          tag: "Hands-on Hardware Lab",
         },
       ],
     },
@@ -319,14 +348,15 @@ export const siteConfig = {
       role: "Team Leader & Lead Robotics Developer",
       companyOrOrg: "Team Falcon Bots / DIU",
       period: "2024 – Present",
-      oneLiner: "Led Team Falcon Bots to 1st Place Championships in Line Follower Robotics (LFR) and Project Showcases.",
+      oneLiner: "Led Team Falcon Bots to WRG 2026 National Silver Medal (Japan Qualifier), DIU RoboCamp Champion, and NSTU LFR Champion.",
       description: [
-        "Led Team Falcon Bots as Team Leader, winning championships including DIU Robo Camp 2026 LFR Champion and NSTU EEE Day 2K26 LFR Champion.",
+        "Led Team Falcon Bots as Team Leader, winning 2nd Position (Silver Medal) at World Robot Games 2026 National Qualifier to represent Bangladesh at the International Round in Chiba, Japan 🇯🇵.",
+        "Won 1st Place Championships at DIU Robo Camp 2026 LFR Champion and NSTU EEE Day 2K26 LFR Champion.",
         "Conducted and led the 'Introduction to IoT' workshop for DIU CIS Batch 24 and Batch 25 students, mentoring 30+ students in microcontroller hardware & IoT sensor integration.",
         "Integrated multiplexed IR sensor arrays, TB6612FNG motor drivers, and fine-tuned PID control algorithms for high-speed autonomous navigation.",
         "Engineered CircuitMind AI - AI-powered EDA workspace converting natural language specifications into electronic schematics.",
       ],
-      skills: ["Team Falcon Bots", "PID Control", "IoT Workshop", "Arduino & ESP32", "C++", "Circuit Design"],
+      skills: ["Team Falcon Bots", "PID Control", "WRG 2026", "IoT Workshop", "Arduino & ESP32", "C++"],
       iconType: "star",
     },
     {
@@ -387,6 +417,19 @@ export const siteConfig = {
 
   achievements: [
     {
+      id: "wrg-2026-national-qualifier",
+      title: "World Robot Games 2026 National Qualifier — Silver Medalist",
+      event: "World Robot Games 2026 – Bangladesh National Qualifier",
+      organization: "Tech Autocrats / World Robot Games",
+      year: "2026",
+      category: "Robotics",
+      description: "Led Team Falcon Bots (DIU CIS) to win 2nd Position (Silver Medal) in Programmable Line Robot Competition (Senior Category), qualifying to represent DIU and Bangladesh at the International Round in Chiba, Japan 🇯🇵 (November 2026).",
+      icon: "trophy",
+      imageUrl: "/images/wrg-2026-silver.jpg",
+      badgeText: "🥈 2nd Position — Silver Medal 🇯🇵",
+      highlight: true,
+    },
+    {
       id: "diu-robo-camp-2026",
       title: "DIU Robo Camp 2026 LFR Champion",
       event: "Robo Camp 2026",
@@ -440,4 +483,5 @@ export const siteConfig = {
     },
   ] as AchievementItem[],
 };
+
 

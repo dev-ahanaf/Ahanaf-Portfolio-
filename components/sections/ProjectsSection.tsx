@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, ArrowRight, X, AlertCircle, CheckCircle2, Sparkles } from "lucide-react";
+import { ExternalLink, Github, ArrowRight, X, AlertCircle, CheckCircle2, Sparkles, ShoppingBag, Globe, FileText } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { projectsData, Project } from "@/data/projects";
 
@@ -12,6 +12,16 @@ export const ProjectsSection: React.FC = () => {
   const [activeModalProject, setActiveModalProject] = useState<Project | null>(null);
 
   const categories = ["All", "AI / ML", "IoT & Robotics", "Web Development"];
+
+  const getCategoryIcon = (technologies: string[]) => {
+    if (technologies.some((t) => t.toLowerCase().includes("shopify"))) {
+      return <ShoppingBag className="w-10 h-10 text-[#10B981]" />;
+    }
+    if (technologies.some((t) => t.toLowerCase().includes("wordpress"))) {
+      return <Globe className="w-10 h-10 text-cyan-400" />;
+    }
+    return <FileText className="w-10 h-10 text-purple-400" />;
+  };
 
   const filteredProjects =
     selectedCategory === "All"
@@ -85,27 +95,43 @@ export const ProjectsSection: React.FC = () => {
 
                     {/* Screenshot Container */}
                     <div className="relative h-52 sm:h-80 w-full overflow-hidden bg-[#08090C]">
-                      <Image
-                        src={project.imageUrl}
-                        alt={project.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 600px"
-                        className="object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#08090C] via-transparent to-transparent opacity-60" />
+                      {project.imageUrl ? (
+                        <>
+                          <Image
+                            src={project.imageUrl}
+                            alt={project.title}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 600px"
+                            className={`object-cover ${project.imagePosition || "object-center"} group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100`}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#08090C] via-transparent to-transparent opacity-60" />
 
-                      {/* UI Annotation Flourishes / Callouts */}
-                      <div className="absolute top-4 left-4 pointer-events-none hidden sm:block">
-                        <div className="px-2.5 py-1 rounded bg-[#10B981] text-slate-950 text-[10px] font-mono font-bold shadow-md border border-white/20 flex items-center gap-1">
-                          <span>GRID SYSTEM: 40PX</span>
-                        </div>
-                      </div>
+                          {/* UI Annotation Flourishes / Callouts */}
+                          <div className="absolute top-4 left-4 pointer-events-none hidden sm:block">
+                            <div className="px-2.5 py-1 rounded bg-[#10B981] text-slate-950 text-[10px] font-mono font-bold shadow-md border border-white/20 flex items-center gap-1">
+                              <span>GRID SYSTEM: 40PX</span>
+                            </div>
+                          </div>
 
-                      <div className="absolute bottom-4 right-4 pointer-events-none hidden sm:block">
-                        <div className="px-2.5 py-1 rounded bg-[#0F131C]/90 text-[#10B981] text-[10px] font-mono shadow-md border border-[#10B981]/30">
-                          <span>ACCESSIBILITY VERIFIED ✓</span>
+                          <div className="absolute bottom-4 right-4 pointer-events-none hidden sm:block">
+                            <div className="px-2.5 py-1 rounded bg-[#0F131C]/90 text-[#10B981] text-[10px] font-mono shadow-md border border-[#10B981]/30">
+                              <span>ACCESSIBILITY VERIFIED ✓</span>
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#0F131C] via-[#161B26] to-[#0A0D14] flex flex-col items-center justify-center p-6 text-center border-b border-slate-800/80">
+                          <div className="p-3.5 rounded-2xl bg-[#08090C]/80 border border-slate-800 mb-3 shadow-inner">
+                            {getCategoryIcon(project.technologies)}
+                          </div>
+                          <h4 className="text-base font-bold text-white max-w-[260px] line-clamp-1 mb-2">
+                            {project.title}
+                          </h4>
+                          <span className="px-3 py-1 text-xs font-mono rounded-full bg-slate-900/90 text-amber-300/90 border border-amber-500/20 backdrop-blur-md">
+                            Live client project — screenshot unavailable
+                          </span>
                         </div>
-                      </div>
+                      )}
                     </div>
                   </div>
                 </div>

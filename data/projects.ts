@@ -9,6 +9,7 @@ export interface Project {
   demoUrl?: string;
   githubUrl?: string;
   imageUrl: string;
+  imagePosition?: string;
   featured: boolean;
 }
 
@@ -26,6 +27,7 @@ export const projectsData: Project[] = [
     demoUrl: "https://circuitmind-ai-omega.vercel.app/",
     githubUrl: "https://github.com/dev-ahanaf/circuitmind-ai",
     imageUrl: "/images/circuitmind-ai.png",
+    imagePosition: "object-top",
     featured: true,
   },
   {
@@ -41,21 +43,23 @@ export const projectsData: Project[] = [
     demoUrl: "https://birthday-wish-nfucpbwud-ahanaf25.vercel.app/",
     githubUrl: "https://github.com/dev-ahanaf/birthday-wish",
     imageUrl: "/images/wishbloom.png",
+    imagePosition: "object-top",
     featured: true,
   },
   {
     id: "autonomous-line-follower",
-    title: "Autonomous PID Line Follower Robot (DIU RoboCamp & NSTU Champion)",
+    title: "Autonomous PID Line Follower Robot (WRG 2026 Silver Medalist & Champion)",
     category: "IoT & Robotics",
-    tagline: "1st Place Champion High-speed PID line-tracking robot (Team Falcon Bots)",
+    tagline: "🥈 2nd Position Silver Medalist (WRG 2026 Japan Qualifier) & 1st Place Champion (Team Falcon Bots)",
     problem:
       "High-speed autonomous navigation requires sub-millisecond sensor response and smooth differential motor control to prevent overshoot at sharp turns.",
     solution:
-      "Designed and built an autonomous robot utilizing an 8-channel IR sensor array, analog multiplexer, TB6612FNG dual motor driver, and fine-tuned PID control algorithms, winning 1st Place Champion at DIU Robo Camp 2026 and NSTU EEE Day 2K26.",
+      "Designed and built an autonomous robot utilizing an 8-channel IR sensor array, analog multiplexer, TB6612FNG dual motor driver, and fine-tuned PID control algorithms. Won 2nd Position Silver Medal at World Robot Games 2026 National Qualifier (qualifying for Japan 🇯🇵) and 1st Place Champions at DIU Robo Camp 2026 & NSTU EEE Day 2K26.",
     technologies: ["Arduino Nano", "C++", "PID Algorithm", "TB6612FNG Driver", "Electronics", "Multiplexer"],
     demoUrl: "https://github.com/dev-ahanaf/pid-line-follower-robot",
     githubUrl: "https://github.com/dev-ahanaf/pid-line-follower-robot",
-    imageUrl: "/images/diu-robocamp-champion.jpg",
+    imageUrl: "/images/wrg-2026-silver.jpg",
+    imagePosition: "object-[center_35%]",
     featured: true,
   },
   {
@@ -71,6 +75,7 @@ export const projectsData: Project[] = [
     demoUrl: "https://github.com/dev-ahanaf/smart-home-iot",
     githubUrl: "https://github.com/dev-ahanaf/smart-home-iot",
     imageUrl: "/images/smart-home-special-mention.jpg",
+    imagePosition: "object-top",
     featured: true,
   },
   {
@@ -86,6 +91,7 @@ export const projectsData: Project[] = [
     demoUrl: "https://perfect-click-com-bd.vercel.app/",
     githubUrl: "https://github.com/dev-ahanaf/perfect-click-studio",
     imageUrl: "/images/photography/perfect-click-1.jpg",
+    imagePosition: "object-top",
     featured: true,
   },
   {
@@ -96,8 +102,10 @@ export const projectsData: Project[] = [
     problem:
       "High mobile bounce rate on single-product landings due to slow custom Liquid script loading and unoptimized product media galleries.",
     solution:
-      "Engineered a lightweight Shopify Liquid theme with lazy-loaded image pipelines, custom AJAX drawer cart, and inline sticky Add-to-Cart bar. // TODO: Ask user for exact conversion % increase or load time metric (e.g. sub-2s mobile LCP).",
+      "Engineered a lightweight Shopify Liquid theme with lazy-loaded image pipelines, custom AJAX drawer cart, and inline sticky Add-to-Cart bar.",
     technologies: ["Shopify Liquid", "CSS3", "JavaScript", "Theme Customization", "E-commerce"],
+    // Screenshot: Add image file to /public/images/kj-product.jpg and set imageUrl: "/images/kj-product.jpg"
+    // Client NDA Note: demoUrl & githubUrl are omitted for client NDA. Add demoUrl: "https://..." when permitted.
     imageUrl: "",
     featured: false,
   },
@@ -109,8 +117,10 @@ export const projectsData: Project[] = [
     problem:
       "Generic Shopify apparel templates failed to handle custom variant swatches (colors/sizes) and lacked a high-converting streetwear aesthetic.",
     solution:
-      "Built a custom Liquid storefront with dynamic color-swatch logic, automated sizing guide modal, and integrated Instagram product tag feed. // TODO: Ask user for exact conversion/traffic metric.",
+      "Built a custom Liquid storefront with dynamic color-swatch logic, automated sizing guide modal, and integrated Instagram product tag feed.",
     technologies: ["Shopify Liquid", "HTML5/CSS3", "JavaScript", "Shopify Apps"],
+    // Screenshot: Add image file to /public/images/hoodies.jpg and set imageUrl: "/images/hoodies.jpg"
+    // Client NDA Note: demoUrl & githubUrl are omitted for client NDA. Add demoUrl: "https://..." when permitted.
     imageUrl: "",
     featured: false,
   },
@@ -122,8 +132,10 @@ export const projectsData: Project[] = [
     problem:
       "Excessive cart abandonment caused by multi-step checkout friction and dense multi-category leather jacket collections on mobile viewports.",
     solution:
-      "Redesigned catalog taxonomy with multi-attribute AJAX filtering, instant search autocomplete, and a streamlined single-page quick-buy modal. // TODO: Ask user for exact checkout conversion rate or mobile speed score.",
+      "Redesigned catalog taxonomy with multi-attribute AJAX filtering, instant search autocomplete, and a streamlined single-page quick-buy modal.",
     technologies: ["Shopify Liquid", "JavaScript", "CSS3", "SEO Optimization"],
+    // Screenshot: Add image file to /public/images/jacketsempire.jpg and set imageUrl: "/images/jacketsempire.jpg"
+    // Client NDA Note: demoUrl & githubUrl are omitted for client NDA. Add demoUrl: "https://..." when permitted.
     imageUrl: "",
     featured: false,
   },
@@ -135,8 +147,10 @@ export const projectsData: Project[] = [
     problem:
       "Manufacturing client needed an updated corporate web presence to present industrial equipment product catalogs and specifications to international B2B buyers.",
     solution:
-      "Designed a custom WordPress theme with custom post types for machinery specs, dynamic RFQ (Request for Quote) modal forms, and WooCommerce catalog mode. // TODO: Ask user for exact client engagement metric.",
+      "Designed a custom WordPress theme with custom post types for machinery specs, dynamic RFQ (Request for Quote) modal forms, and WooCommerce catalog mode.",
     technologies: ["WordPress", "Elementor", "PHP", "WooCommerce", "CSS3"],
+    // Screenshot: Add image file to /public/images/safa-manufacturing.jpg and set imageUrl: "/images/safa-manufacturing.jpg"
+    // Client NDA Note: demoUrl & githubUrl are omitted for client NDA. Add demoUrl: "https://..." when permitted.
     imageUrl: "",
     featured: false,
   },

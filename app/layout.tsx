@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.personal.name} - Portfolio`,
+    title: `${siteConfig.personal.name} - Web Developer, Photographer & AI Builder`,
     description: siteConfig.personal.shortIntro,
   },
 };

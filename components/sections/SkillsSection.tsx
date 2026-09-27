@@ -2,14 +2,16 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Code2, Camera, Sparkles, Wrench, Terminal, Layers, TrendingUp, ShoppingBag } from "lucide-react";
+import { Code2, Cpu, Camera, Sparkles, Wrench, Terminal, Layers, TrendingUp, ShoppingBag } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 
 export const SkillsSection: React.FC = () => {
   const getCategoryIcon = (iconName: string) => {
     switch (iconName) {
+      case "cpu":
+        return <Cpu className="w-5 h-5 text-emerald-400" />;
       case "trending-up":
-        return <TrendingUp className="w-5 h-5 text-emerald-400" />;
+        return <TrendingUp className="w-5 h-5 text-[#10B981]" />;
       case "shopping-bag":
         return <ShoppingBag className="w-5 h-5 text-purple-400" />;
       case "code":

@@ -119,6 +119,23 @@ export const siteConfig = {
 
   skillsCategories: [
     {
+      id: "hardware-ai",
+      title: "Robotics, AI & Hardware",
+      badgeLabel: "ROBOTICS & AI",
+      description: "Microcontroller programming, PID robotics, and AI EDA tools",
+      iconName: "cpu",
+      skills: [
+        "Autonomous PID Robotics",
+        "Arduino & ESP32 Microcontrollers",
+        "Electronics & Circuit Design",
+        "Sensor Arrays & Motor Drivers",
+        "AI EDA & CircuitMind AI",
+        "Gemini / Google AI Studio",
+        "IoT & MQTT Automation",
+      ],
+      tools: ["Arduino IDE", "ESP32", "TB6612FNG", "VS Code"],
+    },
+    {
       id: "digital-marketing",
       title: "Digital Marketing",
       badgeLabel: "DIGITAL MARKETING",

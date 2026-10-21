@@ -23,6 +23,7 @@ export const Navbar: React.FC = () => {
     { label: "About", href: "#about" },
     { label: "Lab / Work", href: "#experience" },
     { label: "Projects", href: "#projects" },
+    { label: "Activities", href: "#activities" },
     { label: "Skills", href: "#skills" },
     { label: "Leadership", href: "#leadership" },
     { label: "Achievements", href: "#achievements" },
@@ -56,12 +57,12 @@ export const Navbar: React.FC = () => {
         </Link>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden md:flex items-center gap-1 rounded-full bg-[#0F131C]/70 border border-[#10B981]/25 px-4 py-1.5 backdrop-blur-md shadow-[0_0_15px_rgba(16,185,129,0.08)]">
+        <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1 rounded-full bg-[#0F131C]/80 border border-[#10B981]/25 px-3 py-1.5 backdrop-blur-md shadow-[0_0_15px_rgba(16,185,129,0.08)]">
           {navItems.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className="px-3.5 py-1.5 text-xs font-medium text-slate-300 hover:text-[#10B981] hover:bg-[#161B26] rounded-full transition-all"
+              className="px-2.5 xl:px-3.5 py-1.5 text-xs font-medium text-slate-300 hover:text-[#10B981] hover:bg-[#161B26] rounded-full transition-all whitespace-nowrap"
             >
               {item.label}
             </Link>
@@ -80,7 +81,7 @@ export const Navbar: React.FC = () => {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-xl bg-[#0F131C] text-slate-300 border border-[#10B981]/30 hover:text-white transition-colors"
+            className="lg:hidden p-2 rounded-xl bg-[#0F131C] text-slate-300 border border-[#10B981]/30 hover:text-white transition-colors"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5 text-[#10B981]" /> : <Menu className="w-5 h-5" />}
@@ -90,7 +91,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer Navigation Overlay */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#08090C]/95 backdrop-blur-2xl border-b border-[#10B981]/20 px-6 py-6 space-y-2 mt-3 shadow-2xl">
+        <div className="lg:hidden bg-[#08090C]/95 backdrop-blur-2xl border-b border-[#10B981]/20 px-6 py-6 space-y-2 mt-3 shadow-2xl">
           {navItems.map((item) => (
             <Link
               key={item.label}

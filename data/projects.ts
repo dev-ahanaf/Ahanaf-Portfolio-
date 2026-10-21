@@ -104,9 +104,7 @@ export const projectsData: Project[] = [
     solution:
       "Engineered a lightweight Shopify Liquid theme with lazy-loaded image pipelines, custom AJAX drawer cart, and inline sticky Add-to-Cart bar.",
     technologies: ["Shopify Liquid", "CSS3", "JavaScript", "Theme Customization", "E-commerce"],
-    // Screenshot: Add image file to /public/images/kj-product.jpg and set imageUrl: "/images/kj-product.jpg"
-    // Client NDA Note: demoUrl & githubUrl are omitted for client NDA. Add demoUrl: "https://..." when permitted.
-    imageUrl: "",
+    imageUrl: "/images/kj-product.jpg",
     featured: false,
   },
   {
@@ -119,9 +117,7 @@ export const projectsData: Project[] = [
     solution:
       "Built a custom Liquid storefront with dynamic color-swatch logic, automated sizing guide modal, and integrated Instagram product tag feed.",
     technologies: ["Shopify Liquid", "HTML5/CSS3", "JavaScript", "Shopify Apps"],
-    // Screenshot: Add image file to /public/images/hoodies.jpg and set imageUrl: "/images/hoodies.jpg"
-    // Client NDA Note: demoUrl & githubUrl are omitted for client NDA. Add demoUrl: "https://..." when permitted.
-    imageUrl: "",
+    imageUrl: "/images/hoodies.jpg",
     featured: false,
   },
   {
@@ -134,9 +130,7 @@ export const projectsData: Project[] = [
     solution:
       "Redesigned catalog taxonomy with multi-attribute AJAX filtering, instant search autocomplete, and a streamlined single-page quick-buy modal.",
     technologies: ["Shopify Liquid", "JavaScript", "CSS3", "SEO Optimization"],
-    // Screenshot: Add image file to /public/images/jacketsempire.jpg and set imageUrl: "/images/jacketsempire.jpg"
-    // Client NDA Note: demoUrl & githubUrl are omitted for client NDA. Add demoUrl: "https://..." when permitted.
-    imageUrl: "",
+    imageUrl: "/images/jacketsempire.jpg",
     featured: false,
   },
   {
@@ -149,9 +143,7 @@ export const projectsData: Project[] = [
     solution:
       "Designed a custom WordPress theme with custom post types for machinery specs, dynamic RFQ (Request for Quote) modal forms, and WooCommerce catalog mode.",
     technologies: ["WordPress", "Elementor", "PHP", "WooCommerce", "CSS3"],
-    // Screenshot: Add image file to /public/images/safa-manufacturing.jpg and set imageUrl: "/images/safa-manufacturing.jpg"
-    // Client NDA Note: demoUrl & githubUrl are omitted for client NDA. Add demoUrl: "https://..." when permitted.
-    imageUrl: "",
+    imageUrl: "/images/safa-manufacturing.jpg",
     featured: false,
   },
 ];

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -21,24 +21,44 @@ import { siteConfig } from "@/data/siteConfig";
 export const LeadershipSection: React.FC = () => {
   const [activeModal, setActiveModal] = useState<{ itemIdx: number; imgIdx: number } | null>(null);
 
-  const handlePrev = () => {
-    if (!activeModal) return;
-    const item = siteConfig.leadership[activeModal.itemIdx];
-    if (!item || !item.galleryImages) return;
+  const handlePrev = useCallback(() => {
+    setActiveModal((curr) => {
+      if (!curr) return null;
+      const item = siteConfig.leadership[curr.itemIdx];
+      if (!item || !item.galleryImages) return curr;
+      const prevIndex =
+        (curr.imgIdx - 1 + item.galleryImages.length) % item.galleryImages.length;
+      return { itemIdx: curr.itemIdx, imgIdx: prevIndex };
+    });
+  }, []);
 
-    const prevIndex =
-      (activeModal.imgIdx - 1 + item.galleryImages.length) % item.galleryImages.length;
-    setActiveModal({ itemIdx: activeModal.itemIdx, imgIdx: prevIndex });
-  };
+  const handleNext = useCallback(() => {
+    setActiveModal((curr) => {
+      if (!curr) return null;
+      const item = siteConfig.leadership[curr.itemIdx];
+      if (!item || !item.galleryImages) return curr;
+      const nextIndex = (curr.imgIdx + 1) % item.galleryImages.length;
+      return { itemIdx: curr.itemIdx, imgIdx: nextIndex };
+    });
+  }, []);
 
-  const handleNext = () => {
-    if (!activeModal) return;
-    const item = siteConfig.leadership[activeModal.itemIdx];
-    if (!item || !item.galleryImages) return;
+  // Keyboard navigation for modal
+  useEffect(() => {
+    if (activeModal === null) return;
 
-    const nextIndex = (activeModal.imgIdx + 1) % item.galleryImages.length;
-    setActiveModal({ itemIdx: activeModal.itemIdx, imgIdx: nextIndex });
-  };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setActiveModal(null);
+      } else if (e.key === "ArrowLeft") {
+        handlePrev();
+      } else if (e.key === "ArrowRight") {
+        handleNext();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [activeModal, handlePrev, handleNext]);
 
   const currentModalItem = activeModal !== null ? siteConfig.leadership[activeModal.itemIdx] : null;
   const currentModalImg =

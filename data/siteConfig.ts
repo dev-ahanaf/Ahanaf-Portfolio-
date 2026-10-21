@@ -23,6 +23,27 @@ export interface AchievementItem {
   highlight?: boolean;
 }
 
+export interface ActivityPost {
+  id: string;
+  title: string;
+  subtitle: string;
+  eventName: string;
+  organization: string;
+  date: string;
+  location: string;
+  team: string;
+  category: string;
+  badge: string;
+  description: string;
+  highlights: string[];
+  tags: string[];
+  images: {
+    url: string;
+    caption: string;
+    tag?: string;
+  }[];
+}
+
 export interface EducationItem {
   institution: string;
   degree: string;
@@ -522,6 +543,53 @@ export const siteConfig = {
       highlight: true,
     },
   ] as AchievementItem[],
+
+  activities: [
+    {
+      id: "ai-dev-fest-2026-hackathon",
+      title: "AI Dev Fest 2026 - AI Hackathon with Team CISNEXUS",
+      subtitle: "Code Innovate Intelligent Future",
+      eventName: "Upay AI Dev Fest 2026",
+      organization: "DIU Computer Programming Club (CPC) & Daffodil International University",
+      date: "6 - 7 October 2026",
+      location: "Daffodil International University, DSC, Birulia, Savar, Dhaka",
+      team: "Team CISNEXUS",
+      category: "AI Hackathon",
+      badge: "⚡ AI Hackathon Participant",
+      description: "Attended Upay AI Dev Fest 2026 and participated in the competitive AI Hackathon with Team CISNEXUS at Daffodil International University. Collaborated intensively on intelligent AI prototypes, prompt optimization, and AI application architectures across the 2-day hackathon sprint.",
+      highlights: [
+        "Participated in the competitive 2-day AI Hackathon segment representing Team CISNEXUS.",
+        "Collaborated on practical machine learning workflows, prompt engineering, and intelligent system integration.",
+        "Exchanged ideas with industry experts, AI mentors, and fellow tech builders across universities.",
+        "Explored festival segments including Datathon challenges, Prompt Battles, and Vibe Coding workshops.",
+      ],
+      tags: [
+        "AI Dev Fest 2026",
+        "AI Hackathon",
+        "Team CISNEXUS",
+        "Daffodil International University",
+        "Machine Learning",
+        "Prompt Engineering",
+      ],
+      images: [
+        {
+          url: "/images/events/ai-dev-fest-cisnexus-group.png",
+          caption: "Team CISNEXUS at the Upay AI Dev Fest 2026 monument (Daffodil International University).",
+          tag: "Team CISNEXUS 👥",
+        },
+        {
+          url: "/images/events/ai-dev-fest-team-working.png",
+          caption: "Team CISNEXUS collaborating during the AI Hackathon development sprint.",
+          tag: "Hackathon Sprint 💻",
+        },
+        {
+          url: "/images/events/ai-dev-fest-ahanaf-portrait.png",
+          caption: "Fayek Ahanaf at the AI Dev Fest 2026 festival arena.",
+          tag: "AI Dev Fest 2026 🎯",
+        },
+      ],
+    },
+  ] as ActivityPost[],
 };
 
 

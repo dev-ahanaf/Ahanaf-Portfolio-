@@ -295,7 +295,7 @@ export const ContactSection: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-4 rounded-xl bg-[#10B981] hover:bg-[#059669] text-slate-950 font-bold text-sm inline-flex items-center justify-center gap-2 transition-all shadow-[0_0_25px_rgba(16,185,129,0.3)] disabled:opacity-50 active:scale-98"
+              className="w-full py-4 rounded-xl bg-[#10B981] hover:bg-[#059669] text-slate-950 font-bold text-sm inline-flex items-center justify-center gap-2 transition-all shadow-[0_0_25px_rgba(16,185,129,0.3)] disabled:opacity-50 active:scale-98 cursor-pointer"
             >
               {loading ? (
                 <>
@@ -307,6 +307,21 @@ export const ContactSection: React.FC = () => {
                 </>
               )}
             </button>
+
+            <div className="relative flex py-2 items-center">
+              <div className="flex-grow border-t border-slate-800/80" />
+              <span className="flex-shrink mx-4 text-[11px] font-mono text-slate-400 uppercase tracking-wider">Or</span>
+              <div className="flex-grow border-t border-slate-800/80" />
+            </div>
+
+            <a
+              href={`mailto:${siteConfig.personal.email}?subject=Project%20Inquiry%20-%20Fayek%20Ahanaf%20Portfolio&body=${encodeURIComponent(
+                formData.message || "Hi Fayek,\n\nI would like to discuss..."
+              )}`}
+              className="w-full py-3 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-white font-semibold text-xs inline-flex items-center justify-center gap-2 border border-slate-800 transition-all active:scale-98"
+            >
+              <Mail className="w-3.5 h-3.5 text-[#10B981]" /> Send Directly via Email App ({siteConfig.personal.email})
+            </a>
           </form>
         </motion.div>
 

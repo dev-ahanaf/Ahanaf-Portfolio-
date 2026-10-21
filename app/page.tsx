@@ -10,6 +10,7 @@ import { GlowingOrbDivider } from "@/components/ui/GlowingOrbDivider";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { PhotographySection } from "@/components/sections/PhotographySection";
 import { CurrentlyBuilding } from "@/components/sections/CurrentlyBuilding";
+import { ActivitiesSection } from "@/components/sections/ActivitiesSection";
 import { EducationSection } from "@/components/sections/EducationSection";
 import { LeadershipSection } from "@/components/sections/LeadershipSection";
 import { ResumeSection } from "@/components/sections/ResumeSection";
@@ -29,6 +30,7 @@ export default function Home() {
       <ProjectsSection />
       <PhotographySection />
       <CurrentlyBuilding />
+      <ActivitiesSection />
       <EducationSection />
       <LeadershipSection />
       <ResumeSection />

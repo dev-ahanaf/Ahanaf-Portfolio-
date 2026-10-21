@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Github, Linkedin, Facebook, Instagram, Mail } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 
@@ -17,9 +18,11 @@ export const Footer: React.FC = () => {
               href="#hero"
               className="inline-flex items-center gap-2.5 text-xl font-black text-white mb-4 font-display"
             >
-              <img
+              <Image
                 src="/logo.png"
                 alt={siteConfig.personal.name}
+                width={48}
+                height={48}
                 className="h-12 w-auto object-contain rounded-md"
               />
               {siteConfig.personal.name}

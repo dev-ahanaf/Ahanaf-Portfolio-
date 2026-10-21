@@ -128,7 +128,7 @@ export const ProjectsSection: React.FC = () => {
                             {project.title}
                           </h4>
                           <span className="px-3 py-1 text-xs font-mono rounded-full bg-slate-900/90 text-amber-300/90 border border-amber-500/20 backdrop-blur-md">
-                            Live client project — screenshot unavailable
+                            Live client project - screenshot unavailable
                           </span>
                         </div>
                       )}

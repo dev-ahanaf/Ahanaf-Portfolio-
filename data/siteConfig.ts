@@ -18,6 +18,7 @@ export interface AchievementItem {
   description: string;
   icon: "trophy" | "award" | "star";
   imageUrl?: string;
+  imagePosition?: string;
   badgeText?: string;
   highlight?: boolean;
 }
@@ -66,7 +67,7 @@ export const siteConfig = {
     shortIntro:
       "Computing & Information Systems student at Daffodil International University (DIU) focused on autonomous robotics, web engineering, AI tools, and visual media production. Team Leader of Falcon Bots, National Silver Medalist at World Robot Games 2026.",
     fullBio:
-      "I am Fayek Ahanaf, a CIS student at Daffodil International University (DIU). As Team Leader of Falcon Bots, I lead championship autonomous line follower robotics projects—winning 2nd Position (Silver Medal) at the World Robot Games 2026 National Qualifier to represent DIU and Bangladesh in Japan 🇯🇵. I also develop AI tools like CircuitMind AI, build modern web apps, and lead technical workshops.",
+      "I am Fayek Ahanaf, a CIS student at Daffodil International University (DIU). As Team Leader of Falcon Bots, I lead championship autonomous line follower robotics projects - winning 2nd Position (Silver Medal) at the World Robot Games 2026 National Qualifier to represent DIU and Bangladesh in Japan 🇯🇵. I also develop AI tools like CircuitMind AI, build modern web apps, and lead technical workshops.",
     availabilityStatement:
       "Interested in building technology that solves practical problems across software, robotics, and creative media.",
     email: "ahanaffayek@gmail.com",
@@ -224,7 +225,7 @@ export const siteConfig = {
 
   certifications: [
     {
-      title: "Web Development — Batch 13",
+      title: "Web Development - Batch 13",
       organization: "Programming Hero",
       period: "Completed",
       details: "Completed a comprehensive frontend web development course, building practical skills in modern web development.",
@@ -237,7 +238,7 @@ export const siteConfig = {
     },
     {
       title: "Advanced Digital Marketing & Shopify Dropshipping",
-      organization: "Webcoder-IT Limited — Uttara, Dhaka",
+      organization: "Webcoder-IT Limited - Uttara, Dhaka",
       period: "Dec 2021 – Mar 2022",
       details: "Completed a 6-month advanced program covering digital marketing strategy and Shopify dropshipping / e-commerce solutions.",
     },
@@ -301,6 +302,7 @@ export const siteConfig = {
         "Microcontroller & Embedded Hardware",
       ],
       bullets: [
+        "Secured 1st Place Champion at 4th NSTU National Science Fest | Robot Line Race (4th October 2026).",
         "Secured 2nd Position (Silver Medal) at World Robot Games 2026 National Qualifier (Programmable Line Robot - Senior Category), qualifying to represent DIU & Bangladesh in Japan 🇯🇵.",
         "Won 1st Place Champion at DIU RoboCamp LFR, NSTU EEE Day LFR Champion, and Project Showcase Special Mention.",
         "Conducted and led the 'Introduction to IoT' workshop for DIU CIS Batch 24 & Batch 25 students.",
@@ -308,12 +310,18 @@ export const siteConfig = {
         "Demonstrated real-time PID line follower robotics control algorithms and hardware assembly.",
       ],
       achievements: [
+        "Champion - 4th NSTU National Science Fest (Robot Line Race)",
         "WRG 2026 Silver Medalist (Japan Qualifier 🇯🇵)",
         "Team Leader - Falcon Bots",
         "DIU RoboCamp 2026 LFR Champion",
         "NSTU EEE Day 2K26 LFR Champion",
       ],
       galleryImages: [
+        {
+          url: "/images/nstu-science-fest-champion.jpg",
+          caption: "Fayek Ahanaf receiving the Champion award for Robot Line Race at the 4th NSTU National Science Fest on stage from the Vice-Chancellor (October 4, 2026).",
+          tag: "NSTU Science Fest Champion 🏆",
+        },
         {
           url: "/images/wrg-2026-silver.jpg",
           caption: "Fayek Ahanaf with the World Robot Games 2026 1st Runner Up Trophy & Silver Medal.",
@@ -365,8 +373,9 @@ export const siteConfig = {
       role: "Team Leader & Lead Robotics Developer",
       companyOrOrg: "Team Falcon Bots / DIU",
       period: "2024 – Present",
-      oneLiner: "Led Team Falcon Bots to WRG 2026 National Silver Medal (Japan Qualifier), DIU RoboCamp Champion, and NSTU LFR Champion.",
+      oneLiner: "Led Team Falcon Bots to 4th NSTU National Science Fest Champion, WRG 2026 National Silver Medal (Japan Qualifier), and DIU RoboCamp Champion.",
       description: [
+        "Led Team Falcon Bots as Team Leader to win 1st Place Champion in the Robot Line Race at the 4th NSTU National Science Fest (4th October 2026).",
         "Led Team Falcon Bots as Team Leader, winning 2nd Position (Silver Medal) at World Robot Games 2026 National Qualifier to represent Bangladesh at the International Round in Chiba, Japan 🇯🇵.",
         "Won 1st Place Championships at DIU Robo Camp 2026 LFR Champion and NSTU EEE Day 2K26 LFR Champion.",
         "Conducted and led the 'Introduction to IoT' workshop for DIU CIS Batch 24 and Batch 25 students, mentoring 30+ students in microcontroller hardware & IoT sensor integration.",
@@ -379,7 +388,7 @@ export const siteConfig = {
     {
       id: "shopify-store-designer",
       role: "Shopify Store Designer",
-      companyOrOrg: "Pep Band — USA (Remote)",
+      companyOrOrg: "Pep Band - USA (Remote)",
       period: "Mar 2023 – Apr 2024",
       oneLiner: "Built visually appealing, user-friendly Shopify stores that drive sales and strengthen brand presence.",
       description: [
@@ -393,7 +402,7 @@ export const siteConfig = {
     {
       id: "digital-marketer-nation-it",
       role: "Digital Marketer",
-      companyOrOrg: "Nation IT Limited — Dhaka",
+      companyOrOrg: "Nation IT Limited - Dhaka",
       period: "Mar 2022 – Apr 2023",
       oneLiner: "Executed data-driven digital marketing campaigns boosting engagement and lead generation.",
       description: [
@@ -434,8 +443,22 @@ export const siteConfig = {
 
   achievements: [
     {
+      id: "nstu-4th-national-science-fest-champion",
+      title: "Champion - 4th NSTU National Science Fest | Robot Line Race",
+      event: "4th NSTU National Science Fest",
+      organization: "Noakhali Science and Technology University (NSTU)",
+      year: "2026",
+      category: "Robotics",
+      description: "Champion at the 4th NSTU National Science Fest | Robot Line Race 🤖🏆. Proud to lead Falcon Bots to another victory! 🦅🔥 (4th October 2026). Honored on stage by Vice-Chancellor Prof. Dr. Golam Rabbani and distinguished guests.",
+      icon: "trophy",
+      imageUrl: "/images/nstu-science-fest-champion.jpg",
+      imagePosition: "object-[center_28%]",
+      badgeText: "🏆 1st Place Champion",
+      highlight: true,
+    },
+    {
       id: "wrg-2026-national-qualifier",
-      title: "World Robot Games 2026 National Qualifier — Silver Medalist",
+      title: "World Robot Games 2026 National Qualifier - Silver Medalist",
       event: "World Robot Games 2026 – Bangladesh National Qualifier",
       organization: "Tech Autocrats / World Robot Games",
       year: "2026",
@@ -443,7 +466,7 @@ export const siteConfig = {
       description: "Led Team Falcon Bots (DIU CIS) to win 2nd Position (Silver Medal) in Programmable Line Robot Competition (Senior Category), qualifying to represent DIU and Bangladesh at the International Round in Chiba, Japan 🇯🇵 (November 2026).",
       icon: "trophy",
       imageUrl: "/images/wrg-2026-silver.jpg",
-      badgeText: "🥈 2nd Position — Silver Medal 🇯🇵",
+      badgeText: "🥈 2nd Position - Silver Medal 🇯🇵",
       highlight: true,
     },
     {

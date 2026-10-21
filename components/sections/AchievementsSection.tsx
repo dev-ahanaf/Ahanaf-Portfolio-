@@ -53,13 +53,13 @@ export const AchievementsSection: React.FC = () => {
                       alt={ach.title}
                       fill
                       sizes="(max-width: 768px) 100vw, 400px"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className={`object-cover group-hover:scale-105 transition-transform duration-500 ${ach.imagePosition || "object-center"}`}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#180c24] via-transparent to-transparent opacity-80" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#180c24] via-transparent to-transparent opacity-70 pointer-events-none" />
                     
                     {ach.badgeText && (
-                      <div className="absolute top-3 right-3">
-                        <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 backdrop-blur-md">
+                      <div className="absolute top-3 right-3 z-10">
+                        <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 backdrop-blur-md shadow-lg">
                           {ach.badgeText}
                         </span>
                       </div>

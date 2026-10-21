@@ -54,7 +54,7 @@ export const projectsData: Project[] = [
     problem:
       "High-speed autonomous navigation requires sub-millisecond sensor response and smooth differential motor control to prevent overshoot at sharp turns.",
     solution:
-      "Designed and built an autonomous robot utilizing an 8-channel IR sensor array, analog multiplexer, TB6612FNG dual motor driver, and fine-tuned PID control algorithms. Won 2nd Position Silver Medal at World Robot Games 2026 National Qualifier (qualifying for Japan 🇯🇵) and 1st Place Champions at DIU Robo Camp 2026 & NSTU EEE Day 2K26.",
+      "Designed and built an autonomous robot utilizing an 8-channel IR sensor array, analog multiplexer, TB6612FNG dual motor driver, and fine-tuned PID control algorithms. Won 1st Place Champion at 4th NSTU National Science Fest (Robot Line Race), 2nd Position Silver Medal at World Robot Games 2026 National Qualifier (qualifying for Japan 🇯🇵), and 1st Place Champions at DIU Robo Camp 2026 & NSTU EEE Day 2K26.",
     technologies: ["Arduino Nano", "C++", "PID Algorithm", "TB6612FNG Driver", "Electronics", "Multiplexer"],
     demoUrl: "https://github.com/dev-ahanaf/pid-line-follower-robot",
     githubUrl: "https://github.com/dev-ahanaf/pid-line-follower-robot",
@@ -96,7 +96,7 @@ export const projectsData: Project[] = [
   },
   {
     id: "kj-product-shopify",
-    title: "KJ Product — E-Commerce Storefront",
+    title: "KJ Product - E-Commerce Storefront",
     category: "Web Development",
     tagline: "Custom e-commerce optimized Shopify store design",
     problem:
@@ -111,7 +111,7 @@ export const projectsData: Project[] = [
   },
   {
     id: "hoodies-shopify",
-    title: "Hoodies.com — E-Commerce Apparel Store",
+    title: "Hoodies.com - E-Commerce Apparel Store",
     category: "Web Development",
     tagline: "Visually appealing apparel store with customized theme",
     problem:
@@ -126,7 +126,7 @@ export const projectsData: Project[] = [
   },
   {
     id: "jacketsempire-shopify",
-    title: "Jacketsempire.com — E-Commerce Store",
+    title: "Jacketsempire.com - E-Commerce Store",
     category: "Web Development",
     tagline: "Custom store focused on e-commerce optimization & high conversion",
     problem:
@@ -141,7 +141,7 @@ export const projectsData: Project[] = [
   },
   {
     id: "safa-manufacturing-wordpress",
-    title: "SafaManufacturing.com — Corporate WordPress Web Design",
+    title: "SafaManufacturing.com - Corporate WordPress Web Design",
     category: "Web Development",
     tagline: "Custom corporate WordPress website for manufacturing enterprise",
     problem:

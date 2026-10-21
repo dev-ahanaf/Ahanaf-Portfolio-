@@ -56,7 +56,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                   {project.title}
                 </h4>
                 <span className="px-2.5 py-1 text-[10px] font-mono rounded-full bg-slate-900/90 text-amber-300/90 border border-amber-500/20 backdrop-blur-md">
-                  Live client project — screenshot unavailable
+                  Live client project - screenshot unavailable
                 </span>
               </div>
             )}
